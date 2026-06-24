@@ -1,32 +1,28 @@
-Add manuscripts/ENGINE.md — complete end-to-end engine specification
+Add 140 ARS_PHYTOGLYPHICA_EXPANDED catalog entries + vp imscribe wizard
 
-New file: manuscripts/ENGINE.md
-  Comprehensive specification of the full Voynich Phytoglyphica system.
+programs/ingest_ars_expanded.py — new ingestion script
+  - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md hardcoded as manifest
+  - 14 cross-reference entries skipped (listed explicitly)
+  - 11 structural types (I–XI) with hardcoded Shavian tuples
+  - deduplication by name key; all 140 were new (catalog 3412 → 3552 entries)
+  - engine now supports vp plant / vp run for all ARS entries:
+    European aromatics (I), tropanes (II), cardiac glycosides (III),
+    non-critical aromatics (IV), eternal/axiom A (V), adaptogens (VI),
+    beta-carbolines (VII), caffeine-purines (VIII), opioid alkaloids (IX),
+    triterpene saponins (X), fungal interfaces (XI)
+  - global coverage: all 5 inhabited continents
 
-  Sections:
-    Purpose — why the VMS resisted decipherment; the split-register executable model
-    The VMS as Split-Register Executable — 6-section register table and architecture
-    The Imscribing Grammar — 12 primitives, names, pharmaceutical roles
-    Primitive-to-Protocol Mapping — complete lookup tables for all 10 active primitives:
-      Þ (5 material classes), Φ (5 solvent systems), Ç (5 kinetic regimes),
-      Σ (3 ratios), Γ (3 comminution specs), Ω (4 winding classes),
-      ƒ (3 concentration targets), Ħ (4 clarification protocols),
-      ɢ (4 combination modes), ⊙ (5 endpoint criteria)
-    The Recipe Opcodes — full opcode table (11 opcodes → primitives consulted)
-      Calefac/cold-process constraint explained
-      Transmuta/cold-process warning explained
-    The Session Engine — Six Gates
-      INIT (foldout initialization), GATE 1 (pharmacy address, selection criteria),
-      GATE 2 (balneological heap, FSPLIT/FFUSE conditions),
-      GATE 3 (astronomical winding, EVALT majority, transcription source disagreement),
-      OUTPUT (recipe proximity selection), ELABORATION (deterministic annotation)
-    Operation: End-to-End Run — 7-step walkthrough
-    Implications:
-      VMS is not a failed cipher (parameters were never in the manuscript)
-      Session invariance / protocol variance
-      The wormwood demonstration (ƒ difference → categorically different preparations)
-      Calefac-Ç interaction as structural proof (grammar forces correct reparse)
-      VMS as universal engine (grammar-parameterized, not plant-specific)
+voynich_phytoglyphica/imscriber.py — new module
+  - interactive 12-primitive imscription wizard for unknown plant entries
+  - presents fixed phytoglyphica baseline (Ð Þ Ř Φ ƒ) then guides through
+    7 discriminating primitives (Ç Γ ɢ ⊙ Ħ Σ Ω) with plain-English options
+  - shows derived tuple, elaborated protocol, and Gate 1 VMS distances
+  - optional catalog save and immediate vp run after assessment
 
-Existing: manuscripts/VOYNICH_PHYTOGLYPHICA.md — nine-entry result tables
-  (companion document; ENGINE.md is the architecture spec)
+voynich_phytoglyphica/navigator.py — added section_distances(tuple_vals)
+  - computes distances from a raw 12-value tuple list to all 6 VMS sections
+  - used by imscriber for immediate structural feedback during assessment
+
+voynich_phytoglyphica/cli.py — registered vp imscribe command
+  - new subcommand wires to imscriber.run_assessment()
+  - catalog path passed as data/IG_catalog.json
