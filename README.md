@@ -350,6 +350,16 @@ The position of this project: the VMS resisted decipherment because it is not a 
 
 ---
 
+## Disclaimer
+
+The *Voynich Phytogylphica* is provided **(1)** for education and edification and **(2)** free of strings or attachments, a loosing which proceeds bi-directionally  
+
+This is to say, the author will not be held responsible for any effects resulting from the application of the information found herein this project
+
+Don't be dumb
+
+---
+
 ## License
 
 Unlicense — public domain.
