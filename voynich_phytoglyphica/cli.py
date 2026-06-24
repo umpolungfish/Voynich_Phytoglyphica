@@ -230,6 +230,15 @@ def cmd_run(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
+# vp imscribe  (interactive wizard for unknown entries)
+# ---------------------------------------------------------------------------
+
+def cmd_imscribe(args: argparse.Namespace) -> int:
+    catalog_path = _DATA / 'IG_catalog.json'
+    return run_assessment(catalog_path=catalog_path)
+
+
+# ---------------------------------------------------------------------------
 # main
 # ---------------------------------------------------------------------------
 
@@ -262,6 +271,9 @@ def main() -> None:
     p_run = sub.add_parser('run', help='Full pipeline: plant name → catalog → session → recipe')
     p_run.add_argument('plant', help='Catalog entry name (e.g. artemisia_absinthium)')
 
+    # imscribe
+    sub.add_parser('imscribe', help='Interactive wizard: assess an unknown plant and derive its structural tuple')
+
     args = parser.parse_args()
 
     dispatch = {
@@ -271,6 +283,7 @@ def main() -> None:
         'sections': cmd_sections,
         'compile':  cmd_compile,
         'run':      cmd_run,
+        'imscribe': cmd_imscribe,
     }
 
     if args.command not in dispatch:
