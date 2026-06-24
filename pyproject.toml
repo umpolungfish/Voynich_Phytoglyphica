@@ -1,0 +1,17 @@
+[project]
+name = "voynich-phytoglyphica"
+version = "1.0.0"
+description = "Voynich Phytoglyphica — Universal Engine session protocol and botanical analysis"
+requires-python = ">=3.11"
+license = {text = "Unlicense"}
+dependencies = []
+
+[tool.uv.sources]
+voynich-engine = { path = "../lang/voynich-engine", editable = true }
+
+[project.scripts]
+vp = "voynich_phytoglyphica.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
