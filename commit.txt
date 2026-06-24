@@ -1,4 +1,15 @@
-Botanical ingredient assignment for all Accipe steps in Part II recipes
+Embed VMS folio images; botanical ingredient assignment for all Accipe steps
+
+Modified: manuscripts/VOYNICH_ANNOTATED_FOLIOS.html (5.2 MB → fully self-contained)
+  VMS folio images (Panel 2, centre column) were loading as external Yale
+  Beinecke IIIF URLs. Browsers block external network requests from file://
+  context (local CSP), so images were blank. Fix:
+    - Downloaded all 35 VMS botanical-section recto images from Yale Beinecke
+      IIIF (!400,520 size, ~40KB each) into images/vms/
+    - resize_and_encode() now reads from images/vms/vms_{folio}_{beid}.jpg
+      and embeds as JPEG base64 data URI, same as plant illustration images.
+  HTML now has 35 VMS + 35 illustration + 35 photo = 105 embedded images.
+  Zero external URLs remain. Size: 5.2 MB (was 3.6 MB).
 
 Modified: manuscripts/VOYNICH_COMPLETE_LISTING.md (765 KB, 13,662 lines)
   All 1,125 Accipe steps across 1,076 recipe entries now carry named
