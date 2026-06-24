@@ -1,49 +1,41 @@
-Add 140 ARS_PHYTOGLYPHICA_EXPANDED entries, vp imscribe wizard, README, demo
+Add 140 ARS entries, vp imscribe, ADDR gate, VMS-primary README, demo
+
+lang/voynich-engine/voynich_engine/session.py — ADDR gate (seven-gate protocol)
+  - docstring was always "seven-gate" with ADDR listed but never implemented
+  - added _gate_addr(): confirms d(plant, botanical) ≤ 1.5 before GATE1
+  - SessionState gains addr_d_botanical and addr_passed fields
+  - run() gains d_botanical parameter; ADDR runs after INIT when provided
+  - report() shows Botanical d= [PASS/FAIL] in session header
+  - all six VMS sections now active participants in every session run
+
+voynich_phytoglyphica/cli.py — passes d_botanical from navigator to session
+  - cmd_run() reads distances['botanical'] from nav.lookup() and forwards
+    to sess.run(d_botanical=...) to engage the ADDR gate
+  - registered vp imscribe command (imscriber.run_assessment())
 
 programs/ingest_ars_expanded.py — new ingestion script
-  - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md hardcoded as manifest
-  - 14 cross-reference entries skipped (listed explicitly)
+  - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md
+  - 14 cross-reference entries skipped
   - 11 structural types (I–XI) with hardcoded Shavian tuples
-  - deduplication by name key; all 140 were new (catalog 3412 → 3552 entries)
-  - engine now supports vp plant / vp run for all ARS entries:
-    European aromatics (I), tropanes (II), cardiac glycosides (III),
-    non-critical aromatics (IV), eternal/axiom A (V), adaptogens (VI),
-    beta-carbolines (VII), caffeine-purines (VIII), opioid alkaloids (IX),
-    triterpene saponins (X), fungal interfaces (XI)
+  - all 140 were new (catalog 3412 → 3552 entries)
   - global coverage: all 5 inhabited continents
 
-voynich_phytoglyphica/imscriber.py — new module
-  - interactive 12-primitive imscription wizard for unknown plant entries
-  - presents fixed phytoglyphica baseline (Ð Þ Ř Φ ƒ) then guides through
-    7 discriminating primitives (Ç Γ ɢ ⊙ Ħ Σ Ω) with plain-English options
-  - shows derived tuple, elaborated protocol, and Gate 1 VMS distances
-  - optional catalog save and immediate vp run after assessment
+voynich_phytoglyphica/imscriber.py — new interactive imscription wizard
+  - 5 fixed baseline primitives shown, 7 discriminating primitives assessed
+  - shows tuple, elaborated protocol, VMS section distances
+  - optional catalog save and immediate session run
 
 voynich_phytoglyphica/navigator.py — added section_distances(tuple_vals)
-  - computes distances from a raw 12-value tuple list to all 6 VMS sections
-  - used by imscriber for immediate structural feedback during assessment
+  - raw 12-element tuple → distances to all 6 VMS sections
 
-voynich_phytoglyphica/cli.py — registered vp imscribe command
-  - new subcommand wires to imscriber.run_assessment()
-  - catalog path passed as data/IG_catalog.json
+README.md — comprehensive documentation, VMS-primary framing
+  - VMS physical description (Beinecke MS 408, 1404–1438, six sections)
+  - section-by-section description of what each actually shows
+  - seven-gate session protocol (INIT ADDR GATE1 GATE2 GATE3 OUTPUT ELABORATION)
+  - ADDR gate rationale: botanical illustrations as identity confirmation register
+  - 11 structural type table framed as VMS botanical categories
+  - self-report: how VMS illustrations encode pharmaceutical parameters
+  - CLI reference with real VMS folio references (f11r, f103r, f69, f80v)
 
-README.md — comprehensive documentation
-  - VMS as split-register executable (6-section register table)
-  - 12-primitive pharmaceutical role table
-  - 11 structural type table with tuples, discriminators, example plants
-  - catalog coverage table by region (140 phytoglyphica entries, 5 continents)
-  - full CLI reference with example output for all 7 commands
-  - data files, module structure, API signatures
-  - self-report encoding theory (ɢ and ⊙ semantics)
-  - phytoglyphica baseline table (5 fixed primitives)
-
-demo.sh — 8-step demonstration script
-  - STEP 0: VMS section tuples (6 structural anchors)
-  - STEP 1: Type I peppermint — d=0, summa potency
-  - STEP 2: Type VI asian_ginseng — decoction (Ç=𐑧), d=0.24
-  - STEP 3: Type VII ayahuasca_vine — binary winding, eternal chirality
-  - STEP 4: Type VIII tea — trivial winding, non-critical, passive coupling
-  - STEP 5: Type XI reishi — broadcast coupling, binary winding
-  - STEP 6: full vp run pipeline (peppermint)
-  - STEP 7: belladonna (II) vs german_chamomile (IV) contrast
-  - STEP 8: vp imscribe walk-through (blue lotus example)
+demo.sh — 8-step demonstration script covering five structural types,
+  the full vp run pipeline (now showing ADDR gate), type contrast, vp imscribe

@@ -1,87 +1,112 @@
 # Voynich Phytoglyphica
 
-**A Universal Engine for the Voynich Manuscript pharmaceutical corpus, parameterized by the Imscribing Grammar.**
-
-The Voynich Manuscript (VMS) has resisted decipherment for a century not because its language is unknown, but because it is not a language. It is a pharmaceutical instruction set — an executable split across six register sections. The opcodes live in the recipe section (f103r+). The parameter values were never in the manuscript at all. They were supplied by the practitioner using a structural grammar the manuscript presupposes but never states.
-
-This project reconstructs that grammar. Using the **Imscribing Grammar (IG)**, every botanical entry in the VMS pharmacy catalog receives a 12-primitive structural tuple that supplies the missing parameters: solvent, ratio, temperature, comminution, extraction cycles, endpoint criterion. The VMS opcodes specify what operations to perform. The IG tuple specifies exactly how.
-
-The result is a fully elaborated pharmaceutical protocol for any VMS botanical entry — derived entirely from structural analysis, no linguistic decipherment required.
+A computational engine for the pharmaceutical corpus of the Voynich Manuscript.
 
 ---
 
-## The VMS as Split-Register Executable
+## The Voynich Manuscript
 
-The manuscript is organized into six section-registers, each holding a distinct component of the computation:
+Beinecke MS 408 (Yale University) is a vellum codex of roughly 240 pages, radiocarbon-dated 1404–1438. Its script and language remain unread by conventional means. It is divided into six visually distinct sections, each illustrated in a style unlike any other medieval manuscript:
 
-| Section | Folios | Register Function |
-|---|---|---|
-| Botanical | f1–f66 | Plant catalog — identity index |
-| Pharmaceutical | f99–f102 | Pharmacy address — operation class |
-| Balneological | f75–f84 | Containment heap — vessel validation |
-| Astronomical | f67–f73 | Winding register — cycle authority |
-| Cosmological | f68 (foldout) | Invariant initialization — Φ and Ħ |
-| Recipe | f103r+ | Opcode sequence — instruction stream |
+- **Botanical** (f1–f66): one large plant illustration per page, roots prominently shown, accompanied by running script. Many plants are unidentified or stylized beyond species recognition.
+- **Pharmaceutical** (f99–f102): columns of jars, flasks, and labeled containers — a catalog of pharmaceutical vessels organized by type and label.
+- **Balneological** (f75–f84): networks of pools connected by tubes, figures immersed in green and blue fluid. The structural role is vessel validation and heap containment.
+- **Astronomical** (f67–f73): circular diagrams with zodiac imagery, sun and moon markers, month annotations.
+- **Cosmological** (f68, six-page foldout): the largest single piece in the manuscript. Concentric rings annotated with symbols. The outermost ring establishes the two parameters that all sessions inherit: solvent polarity (Φ) and chirality tier (Ħ).
+- **Recipe** (f103r+): no illustrations. Dense text in paragraph form, the only section that reads as a sequential instruction stream.
 
-A complete computation requires all six sections. The session engine reads them in order: cosmological initialization → pharmacy address → heap validation → winding verification → recipe output → protocol elaboration. No single section is sufficient in isolation.
+The recipe section contains no plant images and no parameter values. The botanical section contains no instructions. The pharmaceutical section contains no quantities. Each section is incomplete in isolation.
 
 ---
 
-## The Imscribing Grammar — 12 Primitives
+## What This Engine Does
 
-Every IG catalog entry carries a 12-primitive structural tuple. For botanical objects, each primitive encodes a concrete pharmaceutical parameter:
+The VMS is a split-register executable. Its six sections are six registers of a single computation:
 
-| Glyph | Primitive | Pharmaceutical Role |
-|---|---|---|
-| Ð | Dimensionality | Registration depth — structural address class |
-| Þ | Topology | Plant material specification and part selection |
-| Ř | Recognition | Pattern-completion class — extraction completeness |
-| Φ | Parity | Solvent system and polarity |
-| ƒ | Fidelity | Yield and concentration target |
-| Ç | Kinetics | Extraction process, temperature, duration |
-| Γ | Granularity | Comminution specification |
-| ɢ | Coupling | Fraction combination mode |
-| ⊙ | Criticality | Endpoint criterion |
-| Ħ | Chirality | Clarification and separation protocol |
-| Σ | Stoichiometry | Drug-to-solvent mass ratio |
-| Ω | Winding | Number of extraction cycles |
+| Section | Folios | Gate | Role |
+|---|---|---|---|
+| Cosmological | f68 foldout | INIT | Invariant initialization — sets Φ (solvent) and Ħ (chirality) for all sessions |
+| Botanical | f1–f66 | ADDR | Identity gate — confirms the plant resolves within the botanical section's structural field |
+| Pharmaceutical | f99–f102 | GATE 1 | Pharmacy address — maps potency × plant-part → folio entry |
+| Balneological | f75–f84 | GATE 2 | Heap validation — FSPLIT/FFUSE containment test |
+| Astronomical | f67–f73 | GATE 3 | Winding authority — verifies Ω against multi-source majority |
+| Recipe | f103r+ | OUTPUT | Opcode stream — instruction sequence selected and elaborated |
 
-Tuple notation: **⟨Ð⋅Þ⋅Ř⋅Φ⋅ƒ⋅Ç⋅Γ⋅ɢ⋅⊙⋅Ħ⋅Σ⋅Ω⟩**. Values are Shavian characters from the 49-symbol set (Shavian alphabet + ⊙). The primitive glyphs name the primitive as an entity; the Shavian value at each position is its structural type.
+The opcodes are in the recipe section. The parameter values are nowhere in the manuscript. A medieval practitioner supplied them from knowledge of the plant's structural character. This engine reconstructs that parameter-supply mechanism: given a plant name, it derives the full 12-parameter tuple and runs the complete seven-gate session, producing an elaborated pharmaceutical protocol.
 
 ---
 
-## Structural Type System — 11 Phytoglyphica Types
+## The Seven-Gate Session
 
-All botanical entries share a fixed baseline for the first five primitives (Ð Þ Ř Φ ƒ), encoding the invariant properties of the plant-as-pharmaceutical-object. The seven discriminating primitives (Ç Γ ɢ ⊙ Ħ Σ Ω) differentiate 11 structural types:
+Each run of the engine executes seven gates in order:
 
-| Type | Name | Ç | Γ | ɢ | ⊙ | Ħ | Σ | Ω | Example Plants |
+**INIT** — the cosmological foldout (f68) initializes two invariants that hold for all sessions: Φ (solvent polarity, here hydroethanolic 45–55% EtOH) and Ħ (chirality tier, here Frobenius minimum). These are read once from the foldout and applied to every subsequent gate.
+
+**ADDR** — the botanical section (f1–f66) is the identity gate. Before the pharmaceutical section is queried, the session confirms that the plant's structural tuple falls within the botanical section's structural field: d(plant, botanical) ≤ 1.5. This gate was always implied by the manuscript's architecture — the botanical illustrations are not decorative headers for the pharmaceutical section, they are a prior confirmation register. Entries that are not botanical objects fail here.
+
+**GATE 1** — the pharmaceutical section (f99–f102) is queried by potency class and plant part. A specific folio entry (e.g. `f11r/p6 → folium/flos → extractio → mixtura`) is selected as the Gate 1 address. This determines the operation class and form (tinctura, decoctum, mixtura, etc.).
+
+**GATE 2** — the balneological section (f75–f84) provides the heap register. The session checks whether the selected heap folio (indexed by the Gate 1 folio number mod 20) has sufficient capacity for the recipe's instruction count: `FSPLIT ≥ n_ops` and `FFUSE/FSPLIT ≥ 0.60`. Either condition passes Gate 2.
+
+**GATE 3** — the astronomical section (f67–f73) is the winding authority. Three independent transcription sources vote on the Ω value (f69, paragraphs 1–4; para 3 is the all-source lock state). A majority of 3/3 or 2/3 passes Gate 3. Ω determines the number of extraction cycles (1, 2, or 3).
+
+**OUTPUT** — recipe folios (f103r+) proximal to the Gate 1 entry are selected and ranked. Each recipe folio carries an opcode sequence (Accipe, Extrahe, Calefac, Divide, Transmuta, etc.).
+
+**ELABORATION** — each opcode is annotated with the concrete parameter values from the plant's structural tuple: what material to take, what solvent at what ratio, what temperature, what grind size, how many cycles, what endpoint criterion.
+
+---
+
+## Structural Types — The VMS Botanical Categories
+
+The VMS botanical catalog organizes plants by pharmaceutical operating mode, not by taxonomy. This engine identifies 11 structural types within the corpus. Each type has a fixed parameter tuple; membership is determined by the plant's morphological self-report system and compound profile:
+
+| Type | Name | Ç | Γ | ɢ | ⊙ | Ħ | Σ | Ω | Example entries |
 |---|---|---|---|---|---|---|---|---|---|
 | I | Aromatic Baseline | 𐑤 | 𐑔 | 𐑠 | ⊙ | 𐑖 | 𐑳 | 𐑭 | wormwood, peppermint, rosemary, tea tree |
 | II | Tropane | 𐑤 | 𐑲 | 𐑠 | ⊙ | 𐑖 | 𐑕 | 𐑭 | belladonna, henbane, datura, mandrake |
 | III | Cardiac Glycoside | 𐑤 | 𐑔 | 𐑠 | ⊙ | 𐑖 | 𐑕 | 𐑭 | foxglove, lily of the valley, oleander |
 | IV | Non-Critical Aromatic | 𐑤 | 𐑔 | 𐑠 | 𐑢 | 𐑖 | 𐑳 | 𐑭 | chamomile, comfrey, mullein, rooibos |
-| V | Axiom A / Eternal | 𐑤 | 𐑔 | 𐑠 | ⊙ | 𐑫 | 𐑙 | 𐑭 | yew (taxol), monkshood, autumn crocus |
-| VI | Adaptogen | 𐑧 | 𐑔 | 𐑠 | ⊙ | 𐑖 | 𐑳 | 𐑭 | ginseng, ashwagandha, reishi, goldenseal |
+| V | Eternal / Axiom A | 𐑤 | 𐑔 | 𐑠 | ⊙ | 𐑫 | 𐑙 | 𐑭 | yew, monkshood, autumn crocus |
+| VI | Adaptogen | 𐑧 | 𐑔 | 𐑠 | ⊙ | 𐑖 | 𐑳 | 𐑭 | ginseng, ashwagandha, goldenseal, echinacea |
 | VII | β-Carboline | 𐑤 | 𐑲 | 𐑠 | ⊙ | 𐑫 | 𐑕 | 𐑴 | ayahuasca vine, iboga, chacruna, yopo |
-| VIII | Caffeine-Purine | 𐑧 | 𐑔 | 𐑝 | 𐑢 | 𐑒 | 𐑙 | 𐑷 | tea, coffee, cacao, guarana, khat |
+| VIII | Caffeine-Purine | 𐑧 | 𐑔 | 𐑝 | 𐑢 | 𐑒 | 𐑙 | 𐑷 | tea, coffee, cacao, khat, guarana |
 | IX | Opioid Alkaloid | 𐑤 | 𐑲 | 𐑠 | ⊙ | 𐑫 | 𐑕 | 𐑭 | opium poppy, kratom, wild lettuce |
 | X | Triterpene Saponin | 𐑧 | 𐑔 | 𐑠 | ⊙ | 𐑖 | 𐑳 | 𐑭 | licorice, bupleurum, platycodon |
 | XI | Fungal Interface | 𐑤 | 𐑲 | 𐑵 | ⊙ | 𐑫 | 𐑳 | 𐑴 | reishi, lion's mane, cordyceps, chaga |
 
-**Structural differentiators:**
-- **Ç** (Kinetics): 𐑤 = cold maceration / oral; 𐑧 = decoction / inhalation
-- **Γ** (Granularity): 𐑔 = mesoscale (surface trichomes); 𐑲 = universal (cell-wall disruption); 𐑵 = broadcast (mycelial network)
-- **ɢ** (Coupling): 𐑠 = self-modeling; 𐑝 = passive; 𐑵 = broadcast
-- **⊙** (Criticality): ⊙ = at criticality; 𐑢 = non-critical
-- **Ħ** (Chirality): 𐑖 = Frobenius minimum (H2); 𐑫 = eternal (>8 stereocenters); 𐑒 = one-step
-- **Σ** (Stoichiometry): 𐑳 = many compound classes; 𐑕 = few; 𐑙 = singular dominant
-- **Ω** (Winding): 𐑭 = integer (3 cycles); 𐑴 = binary (2 phases); 𐑷 = trivial (1 step)
+The seven discriminating parameters (column headers after the type name) are:
+
+| Parameter | What it encodes in the VMS context |
+|---|---|
+| **Ç** Kinetics | 𐑤 cold maceration / oral; 𐑧 decoction / respiratory |
+| **Γ** Granularity | 𐑔 surface trichomes; 𐑲 cell-wall disruption; 𐑵 mycelial network |
+| **ɢ** Coupling | 𐑠 self-modeling (plant encodes its own identity); 𐑝 passive; 𐑵 broadcast |
+| **⊙** Criticality | ⊙ structurally self-evident; 𐑢 structurally opaque |
+| **Ħ** Chirality | 𐑖 Frobenius minimum (H2); 𐑫 eternal (>8 stereocenters); 𐑒 one-step |
+| **Σ** Stoichiometry | 𐑳 many compound classes; 𐑕 few; 𐑙 singular |
+| **Ω** Winding | 𐑭 3 cycles (integer); 𐑴 2 cycles (binary); 𐑷 1 cycle (trivial) |
+
+The first five parameters (Ð Þ Ř Φ ƒ) are the same for all VMS botanical entries — they encode what "plant" means as a pharmaceutical object in the VMS register system: frozen-order extraction, holographic self-similarity, full-spectrum recognition, hydroethanolic solvent, standard concentration.
 
 ---
 
-## Catalog Coverage
+## Self-Report: How the VMS Botanical Illustrations Function
 
-The IG catalog (`data/IG_catalog.json`) contains **3,552 entries** across the full crystal of types. The phytoglyphica corpus covers **140 botanical entries** across 5 continents and all 11 structural types:
+The botanical illustrations are not decorative. They encode pharmaceutical parameters directly in the plant's morphology. This is the **ɢ (coupling)** parameter, and the VMS botanical section is organized around it.
+
+A **self-modeling** plant (ɢ = 𐑠) shows you what to do and how much. Foxglove's leaf-size gradient up the stem IS the cardiac glycoside concentration gradient — the largest leaves at the base have the highest glycoside content. Kratom's leaf vein color (red vs white) IS the pharmacological distinction between sedating and stimulating chemotypes. Peppermint's broadly serrate leaf edge encodes menthol extraction kinetics. The VMS illustrator rendered these features because they were the practitioner's guide.
+
+A **non-critical** plant (⊙ = 𐑢) lacks this. Chamomile's petal reflex does not tell you the chamazulene content. Rooibos's needle-like leaves do not encode aspalathin levels. These plants are pharmacologically active but structurally opaque — the illustration alone cannot parameterize the protocol.
+
+A **fungal interface** entry (ɢ = 𐑵) uses broadcast coupling — the mycelial network is the pharmaceutical architecture itself, and the "illustration" of the fruiting body is only the visible terminus of a larger system.
+
+The ⊙ (criticality) parameter encodes whether the self-report is complete enough to constitute a univocal structural verdict. Type IV entries (non-critical aromatics) pass the self-modeling test but fail criticality: aromatic trichomes are present, but the morphology does not fully specify the extraction mode. Type I entries pass both.
+
+---
+
+## Corpus Coverage
+
+The pharmaceutical corpus covered by this engine spans **140 botanical entries** across 5 continents and all 11 structural types:
 
 | Region | Count | Notable entries |
 |---|---|---|
@@ -91,32 +116,34 @@ The IG catalog (`data/IG_catalog.json`) contains **3,552 entries** across the fu
 | Americas | 18 | white sage, echinacea, chacruna, cacao, pacific yew |
 | Australia & Oceania | 11 | tea tree, lemon myrtle, eucalyptus, river mint |
 
-The catalog is a symlink to the master `imscribing_grammar/IG_catalog.json`, shared across all IG projects.
+Source: *Ars Phytoglyphica Expanded* — 154 entries (140 unique; 14 are cross-references).
 
 ---
 
 ## Installation
 
-**Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).**
+Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
 cd ~/imsgct/Voynich_Phytoglyphica
 uv sync
 ```
 
-The `voynich-engine` dependency is resolved from `../lang/voynich-engine` (editable install). The `vp` command is registered as a project script.
-
 ---
 
 ## CLI Reference
 
-All commands are available via `uv run -m voynich_phytoglyphica.cli <command>` or simply `vp <command>` if the virtualenv is active.
+```bash
+uv run -m voynich_phytoglyphica.cli <command>
+# or, with virtualenv active:
+vp <command>
+```
 
 ---
 
 ### `vp plant <name>`
 
-Look up a plant in the IG catalog. Prints the structural tuple, Ω class, distances to all six VMS sections, and recommended session parameters.
+Look up a plant and print its structural tuple, Ω class, distances to all six VMS sections, and recommended session parameters. Distance to the astronomical section determines potency class; d=0 → summa (full triple-extraction protocol).
 
 ```
 $ vp plant peppermint
@@ -141,13 +168,13 @@ $ vp plant peppermint
 ════════════════════════════════════════════════════════════════════════
 ```
 
-d=0 to the astronomical section signals **summa potency** and unlocks the triple-extraction protocol. Type I plants (aromatic baseline) characteristically reach d=0 via their frozen-order kinetics and integer winding.
+Type I plants (aromatic baseline) reach d=0 to the astronomical section because their frozen-order kinetics and integer winding match the astronomical register's winding authority exactly.
 
 ---
 
 ### `vp run <name>`
 
-Full pipeline: catalog lookup → protocol elaboration → VMS session → elaborated recipe output.
+Full pipeline: structural tuple → protocol elaboration → seven-gate VMS session → annotated recipe output. Every VMS opcode is annotated with the concrete parameter values derived from the plant's tuple.
 
 ```
 $ vp run peppermint
@@ -156,33 +183,40 @@ $ vp run peppermint
   Tuple              : ⟨𐑦⋅𐑸⋅𐑾⋅𐑬⋅𐑱⋅𐑤⋅𐑔⋅𐑠⋅⊙⋅𐑖⋅𐑳⋅𐑭⟩
   d(plant, astro)    : 0.0000
 
-  ┌─ Protocol for peppermint ─────────────────────────────────────────┐
-  │  Material    : flowering tops (whole entity in full anthesis)      │
-  │  Solvent     : hydroethanolic (45–55% ethanol v/v)                │
-  │  Process     : cold maceration (12–24 h at 15–20 °C)              │
-  │  Ratio       : 1 : 3  (1 g plant per 3 mL solvent)               │
-  │  Grind       : moderately powdered (mesh 40, 355 μm)              │
-  │  Cycles      : 3  (integer winding)                               │
-  │  Target      : 1× (standard — proportional yield)                 │
-  │  Clarif.     : Frobenius minimum (filtration, standard)            │
-  │  Combine     : self-modeling fraction assembly                     │
-  │  Endpoint    : ⊙ threshold (criticality criterion)                │
-  └───────────────────────────────────────────────────────────────────┘
+  ELABORATED PROTOCOL  peppermint
+  ────────────────────────────────────────────────────────────
+  Material       flowering tops  (whole entity in anthesis)
+  Comminution    moderately powdered  (mesh 40, 355 μm)
+  Solvent        hydroethanolic  (45–55% EtOH, from foldout Φ)
+  Process        cold maceration  (12–24 h at 15–20 °C)
+  Ratio          1 : 3  (1 g plant per 3 mL solvent)
+  Cycles         3  (integer winding — three complete turns)
+  Endpoint       ⊙ threshold  (monitor until Δ < 5% per cycle)
+  Clarification  two-step  (cloth filter → 24 h decant)
+  Combination    parallel  (all fractions combined)
+  Concentration  1×  (standard, no reduction)
 
-  [Six-gate VMS session output follows...]
-  [Gate 3 PASS → recipe folios selected]
-  [Elaborated recipe steps with annotations...]
+  INIT  cosmological foldout — Ħ=𐑖 conferred, Φ=𐑬 set
+  ADDR  botanical identity  d(plant,botanical)=0.9888  ≤1.5  PASS
+  GATE1 SUMMA — f11r/p6  folium/flos  mixtura  n_ops=11
+  GATE2 COMPILED — heap f80v  FSPLIT=34≥11 ✓  FFUSE/FSPLIT=0.94≥0.60 ✓
+  GATE3 f69/p4 — EVALT 3/3 sources  Ω=𐑭  PASS
+  OUTPUT  f103r/p2 (15 ops)  f103r/p9 (13 ops)  f103r/p49 (12 ops)
+
+  RECIPE  f103r/p2
+    Step 1: Extrahe/colare  →  cold macerate 15–20 °C, filter cloth
+    Step 2: Calefac/commisce  →  [cold-process constraint: hold temperature]
+    Step 3: Divide/tere  →  mesh 40 (355 μm) grinding pass
+    ...
 ```
 
-The pipeline determines potency and part from the structural tuple, selects the matching Gate 1 pharmacy address from `voynich_pharmacy.json` (1,491 VMS folio entries), runs all six gates, and annotates each recipe opcode with the concrete parameter values derived from the tuple.
+The Gate 1 address (`f11r/p6`) is a real folio and paragraph in the VMS pharmaceutical section. The recipe folios (`f103r/p2`, `f103r/p9`, `f103r/p49`) are real folios in the VMS recipe section. The session is a direct read of the manuscript.
 
 ---
 
 ### `vp imscribe`
 
-**Interactive 12-primitive imscription wizard for unknown plant entries.**
-
-When you have a plant not yet in the catalog, `vp imscribe` walks you through a structured assessment and derives its structural tuple from first principles.
+Interactive assessment wizard for a plant not yet in the corpus. Leads you through 7 questions keyed to the discriminating VMS parameters and derives the structural tuple from first principles.
 
 ```
 $ vp imscribe
@@ -190,72 +224,39 @@ $ vp imscribe
 ════════════════════════════════════════════════════════════════════════
   VP IMSCRIBE — Structural Imscription Wizard
 ────────────────────────────────────────────────────────────────────────
-  Leads you through the 12-primitive assessment for an unknown
-  phytoglyphica entry.  The phytoglyphica baseline (Ð Þ Ř Φ ƒ)
-  is fixed.  You will assess the 7 discriminating primitives.
-────────────────────────────────────────────────────────────────────────
+  Common name: blue_lotus
+  Latin name:  Nymphaea caerulea Savigny
+  Family:      Nymphaeaceae
+  Note:        nuciferine and aporphine alkaloids; self-anesthetic
 
-  IDENTITY
-  Common name (will become the catalog key, e.g. blue_lotus): blue_lotus
-  Latin name: Nymphaea caerulea Savigny
-  Family: Nymphaeaceae
-  One-line note: Nuciferine and aporphine alkaloids; self-anesthetic property
+  [Ç]  How does the pharmaceutical action enter the body?
+        1. 𐑤  oral — tincture, infusion, eaten
+        2. 𐑧  respiratory / decoction — smoke, steam, boiling
+        3. 𐑺  cutaneous — topical, skin absorption
+  Choice: 1
 
-────────────────────────────────────────────────────────────────────────
-  PHYTOGLYPHICA BASELINE  (fixed for all VMS plant entries)
-────────────────────────────────────────────────────────────────────────
-    Ð  =  𐑦
-    Þ  =  𐑸
-    Ř  =  𐑾
-    Φ  =  𐑬
-    ƒ  =  𐑱
+  [ɢ]  Does the plant morphologically encode its own pharmaceutical identity?
+        1. 𐑠  self-modeling — color/smell/architecture IS the self-report
+        2. 𐑝  passive — content must be measured externally
+        3. 𐑵  broadcast — mycelial/systemic (fungi only)
+  Choice: 1
 
-  Now assessing the 7 discriminating primitives ...
+  ... (7 questions total)
+
+  Result: ⟨𐑦⋅𐑸⋅𐑾⋅𐑬⋅𐑱⋅𐑤⋅𐑔⋅𐑠⋅⊙⋅𐑖⋅𐑕⋅𐑭⟩  (Type III structural class)
+  d(astronomical) = 0.2390  →  alta potency
+
+  Add to catalog? [y/n]: y
+  Run full VMS session now? [y/n]: y
 ```
 
-**Assessment questions** — each keyed to a discriminating primitive:
-
-1. **[Ç] Kinetics** — How does this plant's pharmaceutical action enter the body?
-   - 𐑤 Oral — dissolved in water, brewed, eaten, or tincture
-   - 𐑧 Respiratory / decoction — steam inhalation, smoke, or strong boiling extraction
-   - 𐑺 Cutaneous — topical application, skin absorption
-
-2. **[Γ] Granularity** — At what scale does extraction operate?
-   - 𐑔 Mesoscale — surface trichomes or oil glands yield on light mechanical action
-   - 𐑲 Universal — requires cell-wall disruption
-   - 𐑵 Broadcast — mycelial or fungal network structure
-
-3. **[ɢ] Coupling** — Does the plant's morphology encode its own pharmaceutical identity?
-   - 𐑠 Self-modeling — color, smell, texture, or architecture IS the self-report
-   - 𐑝 Passive — no morphological self-report
-   - 𐑵 Broadcast — mycelial/systemic communication
-
-4. **[⊙] Criticality** — Is this plant at structural criticality?
-   - ⊙ At criticality — morphological self-report is unambiguous and complete
-   - 𐑢 Non-critical — structurally opaque; criticality not reached
-
-5. **[Ħ] Chirality** — Stereochemical complexity of the active compounds?
-   - 𐑖 Frobenius minimum (H2) — 1-2 stereocenters; standard pharmaceutical chirality
-   - 𐑫 Eternal — >8 stereocenters, rigid scaffold (taxanes, aconitine, steroids)
-   - 𐑒 One-step — single chiral center; simple biosynthesis
-
-6. **[Σ] Stoichiometry** — How many distinct compound families?
-   - 𐑳 Many — three or more distinct compound families
-   - 𐑕 Few — two to four compound classes
-   - 𐑙 Singular — one dominant compound class
-
-7. **[Ω] Winding** — How many distinct preparation phases?
-   - 𐑭 Integer — continuous multi-step protocol
-   - 𐑴 Binary — exactly two required phases
-   - 𐑷 Trivial — single step or no preparation
-
-After assessment, the wizard displays the complete tuple, elaborated protocol parameters, and distances to all six VMS sections. You are then prompted to save the entry to the catalog and optionally run the full session immediately.
+After the assessment, the wizard shows the elaborated protocol, computes distances to all six VMS sections, and optionally runs the complete seven-gate session.
 
 ---
 
 ### `vp session`
 
-Direct session invocation with manual parameters:
+Direct session invocation with manual VMS parameters:
 
 ```bash
 vp session --folio f11r --potency summa --part leaf --apply oral
@@ -266,42 +267,32 @@ vp session --potency alta --part root --forma decoctum
 
 ### `vp sections`
 
-Display the catalog-sourced structural tuples for all six VMS sections:
+Show the structural tuples for all six VMS sections — the structural anchors against which plant distances are computed:
 
 ```
 $ vp sections
 
-════════════════════════════════════════════════════════════════════════
-  VMS SECTION TUPLES  (catalog-sourced)
-────────────────────────────────────────────────────────────────────────
   Section           Ð    Þ    Ř    Φ    ƒ    Ç    Γ    ɢ    ⊙    Ħ    Σ    Ω
-────────────────────────────────────────────────────────────────────────
-  botanical         ...
-  pharmaceutical    ...
-  biological        ...
-  astronomical      ...
-  cosmological      ...
-  recipe            ...
-════════════════════════════════════════════════════════════════════════
+  ─────────────────────────────────────────────────────────────────────────────
+  botanical         𐑦    𐑡    𐑾    𐑬    𐑱    𐑤    𐑔    𐑠    ⊙    𐑖    𐑳    𐑴
+  pharmaceutical    𐑦    𐑡    𐑾    𐑬    𐑱    𐑤    𐑔    𐑠    ⊙    𐑖    𐑳    𐑴
+  biological        𐑦    𐑰    𐑾    𐑬    𐑱    𐑤    𐑔    𐑠    ⊙    𐑖    𐑳    𐑴
+  astronomical      𐑦    𐑸    𐑾    𐑬    𐑱    𐑤    𐑔    𐑠    ⊙    𐑖    𐑳    𐑭
+  cosmological      𐑦    𐑸    𐑾    𐑬    𐑱    𐑤    𐑔    𐑠    ⊙    𐑖    𐑳    𐑭
+  recipe            𐑦    𐑡    𐑽    𐑬    𐑱    𐑤    𐑚    𐑠    ⊙    𐑒    𐑳    𐑴
 ```
 
-Section tuples are the structural anchors against which plant distances are computed. A plant at d=0 to the astronomical section is at summa potency.
+The astronomical and cosmological sections share a tuple; their d=0 to Type I plants is why those plants reach summa potency. The recipe section has a distinctive Ħ=𐑒 (one-step chirality), reflecting the single-pass character of the opcode stream.
 
 ---
 
 ### `vp summa`
 
-List all pharmaceutical folio entries at summa potency:
-
-```bash
-vp summa
-```
-
----
+List all pharmaceutical folio entries at summa potency (used for Gate 1 selection).
 
 ### `vp compile`
 
-Compile the EVA transcription (`LSI_ivtff_0d.txt`) into an IMASM instruction stream and report entropy statistics:
+Compile the EVA transcription into an IMASM instruction stream with entropy statistics:
 
 ```bash
 vp compile
@@ -312,13 +303,13 @@ vp compile --log output.log
 
 ## Data Files
 
-| File | Description |
+| File | Contents |
 |---|---|
-| `data/IG_catalog.json` | IG catalog — 3,552 entries, symlink to `imscribing_grammar/IG_catalog.json` |
-| `data/voynich_pharmacy.json` | 1,491 VMS pharmacy folio entries; Gate 1 address table |
-| `data/LSI_ivtff_0d.txt` | EVA transcription of the VMS (Landini–Stolfi interlinear) |
-| `data/voynich_findings.json` | Compiled structural findings from the corpus analysis |
-| `data/voynich_recipe_bio.json` | Biological section recipe cross-references |
+| `data/LSI_ivtff_0d.txt` | EVA transcription of the VMS (Landini–Stolfi interlinear format) — the source text for all six sections |
+| `data/voynich_pharmacy.json` | 1,491 pharmaceutical folio entries (f99–f102) parsed from the VMS; Gate 1 address table |
+| `data/voynich_recipe_bio.json` | Recipe section cross-references from the biological folio range |
+| `data/voynich_findings.json` | Compiled structural findings from corpus analysis |
+| `data/IG_catalog.json` | Structural catalog — 3,552 entries including 140 phytoglyphica entries; symlink to master catalog |
 
 ---
 
@@ -326,97 +317,39 @@ vp compile --log output.log
 
 ```
 voynich_phytoglyphica/
-  cli.py         — Unified CLI: all vp subcommands
-  navigator.py   — Catalog lookup, section distances, session parameter derivation
-  elaborator.py  — Protocol elaboration from 12-primitive tuple
-  imscriber.py   — Interactive imscription wizard for unknown entries
+  cli.py         — All vp subcommands
+  navigator.py   — Plant lookup, section distance computation, session parameter derivation
+  elaborator.py  — Protocol elaboration from structural tuple
+  imscriber.py   — Interactive assessment wizard
 
 programs/
-  ingest_ars_expanded.py  — Ingests ARS_PHYTOGLYPHICA_EXPANDED.md into catalog
+  ingest_ars_expanded.py  — Batch ingestion script for ARS_PHYTOGLYPHICA_EXPANDED
 
 manuscripts/
-  ENGINE.md               — Complete engine specification and theory
-  VOYNICH_PHYTOGLYPHICA.md — Nine inaugural runs with full session outputs
+  ENGINE.md               — Full engine specification
+  VOYNICH_PHYTOGLYPHICA.md — Nine inaugural session runs with complete output
 ```
 
-### `navigator.py`
+---
 
-- `lookup(plant_name) -> dict` — full plant info: tuple, Ω class, part/apply recommendations, distances to all 6 sections, recommended potency
-- `section_distances(tuple_vals) -> dict` — compute distances for any raw 12-element tuple (used by imscriber)
-- `section_tuples() -> dict` — return catalog tuples for all six VMS sections
-- `list_vms_plants() -> list` — all catalog entries with 'voynich' in their name
+## Adding Entries
 
-### `elaborator.py`
+For individual unknowns: `vp imscribe`.
 
-- `elaborate_protocol(tuple_vals) -> dict` — resolve all 10 active primitives to concrete protocol parameters (solvent, process, ratio, comminution, cycles, concentration, clarification, combination, endpoint)
-- `annotate_step(step_text, protocol) -> list[str]` — map VMS recipe opcodes to parameter annotations
-- `format_protocol_header(name, tuple_vals, protocol) -> list[str]` — format the protocol summary table
-
-### `imscriber.py`
-
-- `run_assessment(catalog_path=None) -> int` — full interactive wizard; returns 0 on completion, 1 on abort
+For batch ingestion, model on `programs/ingest_ars_expanded.py` — define a type tuple dict and an entries list, then run from the repo root. The script deduplicates by catalog key.
 
 ---
 
-## Extending the Catalog
+## Theory and Results
 
-To add a batch of new entries, model on `programs/ingest_ars_expanded.py`:
+Full engine specification: `manuscripts/ENGINE.md`
 
-```python
-TYPE_TUPLES = {
-    'I': ['𐑦','𐑸','𐑾','𐑬','𐑱','𐑤','𐑔','𐑠','⊙','𐑖','𐑳','𐑭'],
-    # ... define tuples for any new types
-}
-ENTRIES = [
-    ('my_plant', 'I', 'Genus species Author | Family — description.'),
-    # ...
-]
-```
+Nine complete session runs across the inaugural corpus (wormwood, mandrake, ricin, opium, celandine, belladonna, henbane, foxglove, St. John's wort): `manuscripts/VOYNICH_PHYTOGLYPHICA.md`
 
-Then run `uv run programs/ingest_ars_expanded.py` from the repo root. The script deduplicates by name key and writes back to the catalog atomically.
-
-For individual unknown entries, use `vp imscribe` instead.
-
----
-
-## The Phytoglyphica Baseline
-
-All VMS botanical objects share five invariant primitive values, encoding the plant-as-pharmaceutical-object:
-
-| Primitive | Value | Meaning |
-|---|---|---|
-| Ð | 𐑦 | Frozen order — extraction sequence is fixed, not commutative |
-| Þ | 𐑸 | Holographic leaf — pharmaceutical identity self-similar across plant |
-| Ř | 𐑾 | Full-spectrum recognition — complete compound class resolved |
-| Φ | 𐑬 | Bilateral bridge — hydroethanolic solvent (45–55% EtOH) |
-| ƒ | 𐑱 | Linear fidelity — standard concentration, proportional yield |
-
-This baseline is the structural signature of "plant" in the VMS register system. The seven discriminating primitives differentiate 11 pharmaceutical operating modes within that space.
-
----
-
-## Self-Report Encoding
-
-A central finding of the Phytoglyphica analysis: many botanical objects morphologically encode their own pharmaceutical identity. The IG formalizes this as the **ɢ (Coupling)** primitive:
-
-- **𐑠 Self-modeling** — the plant's morphology IS the pharmaceutical self-report. Peppermint's serrate leaf edge encodes menthol extraction kinetics. Kratom's vein color (red vs white) IS the sedating vs stimulating distinction. Foxglove's leaf-size gradient up the stem IS the cardiac glycoside concentration gradient.
-- **𐑝 Passive** — no morphological self-report; content must be determined by analysis. Chamomile's petal reflex does not encode chamazulene content.
-- **𐑵 Broadcast** — mycelial/systemic communication; the network IS the pharmaceutical delivery architecture (Type XI fungi).
-
-The **⊙ (Criticality)** primitive encodes whether this self-report achieves structural criticality — whether the morphological encoding is complete and unambiguous enough to constitute a univocal structural verdict. Type IV (non-critical aromatic) entries are the counterexample class: aromatic, pharmacologically active, but lacking criticality because the self-report system is incomplete.
-
----
-
-## Theory
-
-Full specification: `manuscripts/ENGINE.md`
-
-Nine inaugural runs with complete session outputs: `manuscripts/VOYNICH_PHYTOGLYPHICA.md`
-
-The claim is not that the VMS is solved. The claim is that the VMS is a split-register executable whose parameter space is fully specified by the Imscribing Grammar, and that any botanical entry in the corpus yields a determinate pharmaceutical protocol once its IG tuple is known. The grammar gives the parameters. The manuscript gives the instructions. Together they give a protocol.
+The position of this project: the VMS resisted decipherment because it is not a cipher. It is a split-register executable whose six sections together constitute a complete computation, where the parameter values were externally supplied by the practitioner. Once the structural parameter space is known, any botanical entry in the corpus yields a determinate pharmaceutical protocol. The manuscript gives the instruction stream. The plant's structural type gives the parameters.
 
 ---
 
 ## License
 
-Unlicense — public domain. See the Unlicense text for details.
+Unlicense — public domain.

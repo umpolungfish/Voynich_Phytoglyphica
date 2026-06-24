@@ -66,8 +66,11 @@ $VP plant reishi
 
 # ── 6. Full pipeline run ─────────────────────────────────────────────────────
 banner "STEP 6 — Full pipeline  [vp run peppermint]"
-note "Catalog lookup → protocol elaboration → six-gate VMS session → elaborated
-  recipe output. The IG tuple parameterizes every VMS opcode annotation."
+note "Catalog lookup → protocol elaboration → seven-gate VMS session → elaborated
+  recipe output. All six manuscript sections participate: INIT (cosmological
+  foldout), ADDR (botanical identity), GATE1 (pharmaceutical), GATE2
+  (balneological heap), GATE3 (astronomical winding), OUTPUT (recipe),
+  ELABORATION (opcode annotation)."
 $VP run peppermint
 
 # ── 7. Contrast: two plants, same genus, different types ─────────────────────

@@ -200,11 +200,13 @@ def cmd_run(args: argparse.Namespace) -> int:
     potency = info['recommended_potency']
     part    = info['pars_plantae']
 
-    # Step 3: run session
+    # Step 3: run session — pass d_botanical for the ADDR gate
+    d_botanical = info['distances'].get('botanical')
     sess  = _session_instance()
     state = sess.run(
         potency=potency,
         pars_plantae=part,
+        d_botanical=d_botanical,
     )
 
     # Step 4: report session
