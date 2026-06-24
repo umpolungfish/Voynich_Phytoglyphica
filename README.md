@@ -25,12 +25,12 @@ The VMS is a split-register executable. Its six sections are six registers of a 
 
 | Section | Folios | Gate | Role |
 |---|---|---|---|
-| Cosmological | f68 foldout | INIT | Invariant initialization — sets Φ (solvent) and Ħ (chirality) for all sessions |
-| Botanical | f1–f66 | ADDR | Identity gate — confirms the plant resolves within the botanical section's structural field |
-| Pharmaceutical | f99–f102 | GATE 1 | Pharmacy address — maps potency × plant-part → folio entry |
-| Balneological | f75–f84 | GATE 2 | Heap validation — FSPLIT/FFUSE containment test |
-| Astronomical | f67–f73 | GATE 3 | Winding authority — verifies Ω against multi-source majority |
-| Recipe | f103r+ | OUTPUT | Opcode stream — instruction sequence selected and elaborated |
+| Cosmological | f68 foldout | `INIT` | Invariant `INIT`ialization — sets Φ (solvent) and Ħ (chirality) for all sessions |
+| Botanical | f1–f66 | `ADDR` | Identity gate — confirms the plant resolves within the botanical section's structural field |
+| Pharmaceutical | f99–f102 | `GATE 1` | Pharmacy address — maps potency × plant-part → folio entry |
+| Balneological | f75–f84 | `GATE 2` | Heap validation — FSPLIT/FFUSE containment test |
+| Astronomical | f67–f73 | `GATE 3` | Winding authority — verifies Ω against multi-source majority |
+| Recipe | f103r+ | `OUTPUT` | Opcode stream — instruction sequence selected and elaborated |
 
 The opcodes are in the recipe section. The parameter values are nowhere in the manuscript. A medieval practitioner supplied them from knowledge of the plant's structural character. This engine reconstructs that parameter-supply mechanism: given a plant name, it derives the full 12-parameter tuple and runs the complete seven-gate session, producing an elaborated pharmaceutical protocol.
 
@@ -40,19 +40,19 @@ The opcodes are in the recipe section. The parameter values are nowhere in the m
 
 Each run of the engine executes seven gates in order:
 
-**INIT** — the cosmological foldout (f68) initializes two invariants that hold for all sessions: Φ (solvent polarity, here hydroethanolic 45–55% EtOH) and Ħ (chirality tier, here Frobenius minimum). These are read once from the foldout and applied to every subsequent gate.
+**`INIT`** — the cosmological foldout (f68) `INIT`ializes two invariants that hold for all sessions: Φ (solvent polarity, here hydroethanolic 45–55% EtOH) and Ħ (chirality tier, here Frobenius minimum). These are read once from the foldout and applied to every subsequent gate.
 
-**ADDR** — the botanical section (f1–f66) is the identity gate. Before the pharmaceutical section is queried, the session confirms that the plant's structural tuple falls within the botanical section's structural field: d(plant, botanical) ≤ 1.5. This gate was always implied by the manuscript's architecture — the botanical illustrations are not decorative headers for the pharmaceutical section, they are a prior confirmation register. Entries that are not botanical objects fail here.
+**`ADDR`** — the botanical section (f1–f66) is the identity gate. Before the pharmaceutical section is queried, the session confirms that the plant's structural tuple falls within the botanical section's structural field: d(plant, botanical) ≤ 1.5. This gate was always implied by the manuscript's architecture — the botanical illustrations are not decorative headers for the pharmaceutical section, they are a prior confirmation register. Entries that are not botanical objects fail here.
 
-**GATE 1** — the pharmaceutical section (f99–f102) is queried by potency class and plant part. A specific folio entry (e.g. `f11r/p6 → folium/flos → extractio → mixtura`) is selected as the Gate 1 address. This determines the operation class and form (tinctura, decoctum, mixtura, etc.).
+**`GATE 1`** — the pharmaceutical section (f99–f102) is queried by potency class and plant part. A specific folio entry (e.g. `f11r/p6 → folium/flos → extractio → mixtura`) is selected as the `GATE 1` address. This determines the operation class and form (tinctura, decoctum, mixtura, etc.).
 
-**GATE 2** — the balneological section (f75–f84) provides the heap register. The session checks whether the selected heap folio (indexed by the Gate 1 folio number mod 20) has sufficient capacity for the recipe's instruction count: `FSPLIT ≥ n_ops` and `FFUSE/FSPLIT ≥ 0.60`. Either condition passes Gate 2.
+**`GATE 2`** — the balneological section (f75–f84) provides the heap register. The session checks whether the selected heap folio (indexed by the `GATE 1` folio number mod 20) has sufficient capacity for the recipe's instruction count: `FSPLIT ≥ n_ops` and `FFUSE/FSPLIT ≥ 0.60`. Either condition passes Gate 2.
 
-**GATE 3** — the astronomical section (f67–f73) is the winding authority. Three independent transcription sources vote on the Ω value (f69, paragraphs 1–4; para 3 is the all-source lock state). A majority of 3/3 or 2/3 passes Gate 3. Ω determines the number of extraction cycles (1, 2, or 3).
+**`GATE 3`** — the astronomical section (f67–f73) is the winding authority. Three independent transcription sources vote on the Ω value (f69, paragraphs 1–4; para 3 is the all-source lock state). A majority of 3/3 or 2/3 passes Gate 3. Ω determines the number of extraction cycles (1, 2, or 3).
 
-**OUTPUT** — recipe folios (f103r+) proximal to the Gate 1 entry are selected and ranked. Each recipe folio carries an opcode sequence (Accipe, Extrahe, Calefac, Divide, Transmuta, etc.).
+**`OUTPUT`** — recipe folios (f103r+) proximal to the `GATE 1` entry are selected and ranked. Each recipe folio carries an opcode sequence (Accipe, Extrahe, Calefac, Divide, Transmuta, etc.).
 
-**ELABORATION** — each opcode is annotated with the concrete parameter values from the plant's structural tuple: what material to take, what solvent at what ratio, what temperature, what grind size, how many cycles, what endpoint criterion.
+**`ELABORATION`** — each opcode is annotated with the concrete parameter values from the plant's structural tuple: what material to take, what solvent at what ratio, what temperature, what grind size, how many cycles, what endpoint criterion.
 
 ---
 
@@ -94,13 +94,13 @@ The first five parameters (Ð Þ Ř Φ ƒ) are the same for all VMS botanical en
 
 The botanical illustrations are not decorative. They encode pharmaceutical parameters directly in the plant's morphology. This is the **ɢ (coupling)** parameter, and the VMS botanical section is organized around it.
 
-A **self-modeling** plant (ɢ = 𐑠) shows you what to do and how much. Foxglove's leaf-size gradient up the stem IS the cardiac glycoside concentration gradient — the largest leaves at the base have the highest glycoside content. Kratom's leaf vein color (red vs white) IS the pharmacological distinction between sedating and stimulating chemotypes. Peppermint's broadly serrate leaf edge encodes menthol extraction kinetics. The VMS illustrator rendered these features because they were the practitioner's guide.
+A **self-modeling** plant **(ɢ = 𐑠)** shows you what to do and how much. Foxglove's leaf-size gradient up the stem IS the cardiac glycoside concentration gradient — the largest leaves at the base have the highest glycoside content. Kratom's leaf vein color (red vs white) IS the pharmacological distinction between sedating and stimulating chemotypes. Peppermint's broadly serrate leaf edge encodes menthol extraction kinetics. The VMS illustrator rendered these features because they were the practitioner's guide.
 
-A **non-critical** plant (⊙ = 𐑢) lacks this. Chamomile's petal reflex does not tell you the chamazulene content. Rooibos's needle-like leaves do not encode aspalathin levels. These plants are pharmacologically active but structurally opaque — the illustration alone cannot parameterize the protocol.
+A **non-critical** plant **(⊙ = 𐑢)** lacks this. Chamomile's petal reflex does not tell you the chamazulene content. Rooibos's needle-like leaves do not encode aspalathin levels. These plants are pharmacologically active but structurally opaque — the illustration alone cannot parameterize the protocol.
 
-A **fungal interface** entry (ɢ = 𐑵) uses broadcast coupling — the mycelial network is the pharmaceutical architecture itself, and the "illustration" of the fruiting body is only the visible terminus of a larger system.
+A **fungal interface** entry **(ɢ = 𐑵)** uses broadcast coupling — the mycelial network is the pharmaceutical architecture itself, and the "illustration" of the fruiting body is only the visible terminus of a larger system.
 
-The ⊙ (criticality) parameter encodes whether the self-report is complete enough to constitute a univocal structural verdict. Type IV entries (non-critical aromatics) pass the self-modeling test but fail criticality: aromatic trichomes are present, but the morphology does not fully specify the extraction mode. Type I entries pass both.
+The **⊙** (criticality) parameter encodes whether the self-report is complete enough to constitute a univocal structural verdict. Type IV entries (non-critical aromatics) pass the self-modeling test but fail criticality: aromatic trichomes are present, but the morphology does not fully specify the extraction mode. Type I entries pass both.
 
 ---
 
@@ -196,12 +196,12 @@ $ vp run peppermint
   Combination    parallel  (all fractions combined)
   Concentration  1×  (standard, no reduction)
 
-  INIT  cosmological foldout — Ħ=𐑖 conferred, Φ=𐑬 set
-  ADDR  botanical identity  d(plant,botanical)=0.9888  ≤1.5  PASS
+  `INIT`  cosmological foldout — Ħ=𐑖 conferred, Φ=𐑬 set
+  `ADDR`  botanical identity  d(plant,botanical)=0.9888  ≤1.5  PASS
   GATE1 SUMMA — f11r/p6  folium/flos  mixtura  n_ops=11
   GATE2 COMPILED — heap f80v  FSPLIT=34≥11 ✓  FFUSE/FSPLIT=0.94≥0.60 ✓
   GATE3 f69/p4 — EVALT 3/3 sources  Ω=𐑭  PASS
-  OUTPUT  f103r/p2 (15 ops)  f103r/p9 (13 ops)  f103r/p49 (12 ops)
+  `OUTPUT`  f103r/p2 (15 ops)  f103r/p9 (13 ops)  f103r/p49 (12 ops)
 
   RECIPE  f103r/p2
     Step 1: Extrahe/colare  →  cold macerate 15–20 °C, filter cloth
@@ -210,7 +210,7 @@ $ vp run peppermint
     ...
 ```
 
-The Gate 1 address (`f11r/p6`) is a real folio and paragraph in the VMS pharmaceutical section. The recipe folios (`f103r/p2`, `f103r/p9`, `f103r/p49`) are real folios in the VMS recipe section. The session is a direct read of the manuscript.
+The `GATE 1` address (`f11r/p6`) is a real folio and paragraph in the VMS pharmaceutical section. The recipe folios (`f103r/p2`, `f103r/p9`, `f103r/p49`) are real folios in the VMS recipe section. The session is a direct read of the manuscript.
 
 ---
 
@@ -288,7 +288,7 @@ The astronomical and cosmological sections share a tuple; their d=0 to Type I pl
 
 ### `vp summa`
 
-List all pharmaceutical folio entries at summa potency (used for Gate 1 selection).
+List all pharmaceutical folio entries at summa potency (used for `GATE 1` selection).
 
 ### `vp compile`
 
@@ -306,7 +306,7 @@ vp compile --log output.log
 | File | Contents |
 |---|---|
 | `data/LSI_ivtff_0d.txt` | EVA transcription of the VMS (Landini–Stolfi interlinear format) — the source text for all six sections |
-| `data/voynich_pharmacy.json` | 1,491 pharmaceutical folio entries (f99–f102) parsed from the VMS; Gate 1 address table |
+| `data/voynich_pharmacy.json` | 1,491 pharmaceutical folio entries (f99–f102) parsed from the VMS; `GATE 1` address table |
 | `data/voynich_recipe_bio.json` | Recipe section cross-references from the biological folio range |
 | `data/voynich_findings.json` | Compiled structural findings from corpus analysis |
 | `data/IG_catalog.json` | Structural catalog — 3,552 entries including 140 phytoglyphica entries; symlink to master catalog |
