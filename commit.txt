@@ -1,41 +1,31 @@
-Add 140 ARS entries, vp imscribe, ADDR gate, vp list/search, dosage output, VMS-primary README, demo
+Dosage verification pass: Σ×Γ base scaling, decoction fix, step label correction
 
-lang/voynich-engine/voynich_engine/session.py — ADDR gate (seven-gate protocol)
-  - docstring was always "seven-gate" with ADDR listed but never implemented
-  - added _gate_addr(): confirms d(plant, botanical) ≤ 1.5 before GATE1
-  - SessionState gains addr_d_botanical and addr_passed fields
-  - run() gains d_botanical parameter; ADDR runs after INIT when provided
-  - report() shows Botanical d= [PASS/FAIL] in session header
-  - all six VMS sections now active participants in every session run
+dosage_specification() in elaborator.py — rewritten base-volume logic:
+  - Tincture base now scales by Σ (drug:solvent ratio) × Γ (extraction efficiency):
+      Σ=𐑙 (1:1 saturated)          → 0.5 mL base  (maximum concentration)
+      Σ=𐑕 + Γ=𐑲 (conc. + fine)    → 0.75 mL base
+      Σ=𐑕 + Γ=𐑔 (conc. + medium)  → 1.0 mL base
+      Σ=𐑳 + Γ=𐑲 (std. + fine)     → 1.5 mL base
+      Σ=𐑳 + Γ=𐑔 (std. + medium)   → 2.0 mL base (standard tincture)
+  - Previously all tinctures used a flat 2 mL base regardless of concentration or
+    extraction efficiency, which overestimated serving for alkaloid-class plants by
+    2–4×. Type IX (opium) now 1 mL × 2/day = 1 g/day vs. old 2 mL × 3/day = 3 g/day.
+    Type V (yew) now 0.5 mL × 2/day = 1 g/day vs. old 2 mL × 3/day = 6 g/day.
+  - Decoction (Ç=𐑧) base: 100 mL (was 150–200 mL); tier multipliers:
+      summa → ×1.5 → 150 mL; alta → ×1.25 → 125 mL;
+      media → ×1.0 → 100 mL; debilis → ×0.75 → 75 mL
+    Frequency capped at 2×/day for all decoctions and infusions.
+    Single dominant compound (Σ=𐑙) decoction → 1×/day.
+    Ginseng/licorice: was 675–900 mL/day, now 250 mL/day. ✓
+  - Ħ=𐑫 (eternal chirality, >4 stereocenters) now also reduces tincture frequency
+    from 3× to 2×/day, not only the dose-range warning.
+  - Ħ=𐑖 (Frobenius min) + Σ=𐑕 or Σ=𐑙 → ↳ chirality-sensitive note (ratio precision).
+  - Double ⚠ display bug fixed (chiral_warning prefix removed).
+  - All 11 structural types verified; daily total arithmetic confirmed correct.
 
-voynich_phytoglyphica/elaborator.py — dosage_specification()
-  - new function: derives specific serving volume, frequency, course duration,
-    and daily total from structural tuple + d_astronomical
-  - Ç → preparation form and base volume (tincture mL vs decoction mL vs drops)
-  - potency tier (summa/alta/media/debilis) from d_astronomical → dose multiplier
-  - Σ + Ω → frequency and course duration
-  - Ħ=𐑫 (eternal chirality) → safety warning at lower end of range
-  - tinctures: daily total ≡ g dried herb/day via 1:N ratio
-  - decoctions/infusions: daily volume of prepared liquid only
-  - essential oils: daily drops in carrier
-
-voynich_phytoglyphica/cli.py — new commands + ADDR gate wiring + dosage
-  - cmd_run() calls dosage_specification() after elaborated recipe output
-  - cmd_list(): browse all 140 ARS phytoglyphica entries grouped by type (I–XI)
-  - cmd_search(query): keyword search across plant name and description
-  - passes d_botanical from navigator to session for ADDR gate
-  - registered vp imscribe command
-
-voynich_phytoglyphica/imscriber.py — dosage shown after VMS section distances
-  - d_astronomical from section_distances()['astronomical'] feeds dosage_specification()
-
-programs/ingest_ars_expanded.py — new ingestion script
-  - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md
-  - catalog 3412 → 3552 entries
-
-voynich_phytoglyphica/navigator.py — list_phytoglyphica(), section_distances()
-  - list_phytoglyphica(query=None): filter by baseline, group by type label
-  - section_distances(tuple_vals): in-memory tuple → distances to all 6 VMS sections
-
-README.md — comprehensive documentation, VMS-primary framing
-demo.sh — 8-step demonstration with ADDR gate and vp list/search/imscribe
+data/voynich_recipe_bio.json — step label:
+  - "Accipe materiam (Take ingredient)" → "Accipe materiam (Take up ingredient in hand)"
+  - 97 occurrences replaced; plural "Accipe 2 materias (Take 2 ingredients)" unchanged.
+  - Rationale: "Take ingredient" reads as a patient dosing instruction; the Latin verb
+    accipere here means the preparer physically handles the material (lifting, weighing,
+    measuring) before the next preparation step — the fuller phrase makes this unambiguous.

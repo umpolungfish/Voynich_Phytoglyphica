@@ -1,1 +1,1015 @@
-/home/mrnob0dy666/imsgct/ig-docs/voynich_integrated/voynich_recipe_bio.json
+{
+  "recipe_section": {
+    "total_entries": 1076,
+    "avg_steps": 7.4609665427509295,
+    "ingredient_distribution": {
+      "3": 329,
+      "2": 333,
+      "4": 159,
+      "1": 172,
+      "5": 32,
+      "0": 49,
+      "6": 2
+    },
+    "type_distribution": {
+      "decoction/elixir (heat-dominant)": 150,
+      "extraction/tincture (steeping-dominant)": 209,
+      "powder/pulvis (grinding-dominant)": 390,
+      "compound formula": 250,
+      "alchemical (volatile reaction)": 22,
+      "application preparation": 40,
+      "preservation/curing": 15
+    },
+    "recipes": [
+      {
+        "folio": "f103r",
+        "para": 1,
+        "n_ops": 13,
+        "n_steps": 11,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)",
+          "Step 7: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 8: Extrahe/colare (Extract or strain)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)",
+          "Step 10: Extrahe/colare (Extract or strain)",
+          "Step 11: Compone (Compose/formulate final mixture)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 2,
+        "n_ops": 15,
+        "n_steps": 15,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Divide/tere (Divide or grind)",
+          "Step 8: Extrahe/colare (Extract or strain)",
+          "Step 9: Divide/tere (Divide or grind)",
+          "Step 10: Extrahe/colare (Extract or strain)",
+          "Step 11: Applica/administra (Apply or administer)",
+          "Step 12: Extrahe/colare (Extract or strain)",
+          "Step 13: Extrahe/colare (Extract or strain)",
+          "Step 14: Accipe materiam (Take up ingredient in hand)",
+          "Step 15: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 3,
+        "n_ops": 14,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 2: Divide/tere \u00d74 (Grind thoroughly, 4 passes)",
+          "Step 3: Accipe 3 materias (Take 3 ingredients)",
+          "Step 4: Divide/tere (Divide or grind)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Extrahe/colare (Extract or strain)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 4,
+        "n_ops": 9,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe 4 materias (Take 4 ingredients)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 5,
+        "n_ops": 12,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Extrahe/colare (Extract or strain)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Calefac/commisce (Heat or combine)",
+          "Step 9: Extrahe/colare (Extract or strain)",
+          "Step 10: Accipe 2 materias (Take 2 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 6,
+        "n_ops": 12,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Extrahe/colare (Extract or strain)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe 2 materias (Take 2 ingredients)",
+          "Step 9: Extrahe/colare (Extract or strain)",
+          "Step 10: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 7,
+        "n_ops": 8,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 4: Accipe 3 materias (Take 3 ingredients)",
+          "Step 5: Calefac/commisce (Heat or combine)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 8,
+        "n_ops": 14,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Extrahe/colare (Extract or strain)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)",
+          "Step 7: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 8: Accipe 2 materias (Take 2 ingredients)",
+          "Step 9: Divide/tere (Divide or grind)",
+          "Step 10: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 9,
+        "n_ops": 13,
+        "n_steps": 12,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Extrahe/colare (Extract or strain)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Extrahe/colare (Extract or strain)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe 2 materias (Take 2 ingredients)",
+          "Step 9: Calefac/commisce (Heat or combine)",
+          "Step 10: Accipe materiam (Take up ingredient in hand)",
+          "Step 11: Applica/administra (Apply or administer)",
+          "Step 12: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 10,
+        "n_ops": 13,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Accipe 3 materias (Take 3 ingredients)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)",
+          "Step 10: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 11,
+        "n_ops": 13,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Accipe 3 materias (Take 3 ingredients)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe 2 materias (Take 2 ingredients)",
+          "Step 9: Applica/administra (Apply or administer)",
+          "Step 10: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 12,
+        "n_ops": 9,
+        "n_steps": 7,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 3: Accipe 2 materias (Take 2 ingredients)",
+          "Step 4: Applica/administra (Apply or administer)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Extrahe/colare (Extract or strain)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 13,
+        "n_ops": 12,
+        "n_steps": 9,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe 3 materias (Take 3 ingredients)",
+          "Step 4: Divide/tere (Divide or grind)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Extrahe/colare (Extract or strain)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 14,
+        "n_ops": 13,
+        "n_steps": 11,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Extrahe/colare (Extract or strain)",
+          "Step 8: Divide/tere (Divide or grind)",
+          "Step 9: Applica/administra (Apply or administer)",
+          "Step 10: Divide/tere (Divide or grind)",
+          "Step 11: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 15,
+        "n_ops": 5,
+        "n_steps": 4,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Calefac/commisce (Heat or combine)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 16,
+        "n_ops": 11,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 2: Applica/administra (Apply or administer)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Extrahe/colare (Extract or strain)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Divide/tere (Divide or grind)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)",
+          "Step 9: Divide/tere (Divide or grind)",
+          "Step 10: Calefac/commisce (Heat or combine)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 17,
+        "n_ops": 10,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Applica/administra (Apply or administer)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Divide/tere (Divide or grind)",
+          "Step 7: Accipe 3 materias (Take 3 ingredients)",
+          "Step 8: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 18,
+        "n_ops": 10,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe 2 materias (Take 2 ingredients)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 19,
+        "n_ops": 12,
+        "n_steps": 11,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Divide/tere (Divide or grind)",
+          "Step 7: Accipe 2 materias (Take 2 ingredients)",
+          "Step 8: Extrahe/colare (Extract or strain)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)",
+          "Step 10: Compone (Compose/formulate final mixture)",
+          "Step 11: \u26a1 Transmuta (Volatile transformation \u2014 watch carefully)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 20,
+        "n_ops": 7,
+        "n_steps": 7,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 21,
+        "n_ops": 12,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Extrahe/colare (Extract or strain)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)",
+          "Step 7: Divide/tere (Divide or grind)",
+          "Step 8: Accipe 3 materias (Take 3 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 22,
+        "n_ops": 11,
+        "n_steps": 9,
+        "steps": [
+          "Step 1: Calefac/commisce (Heat or combine)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)",
+          "Step 9: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 23,
+        "n_ops": 5,
+        "n_steps": 4,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 4: Calefac/commisce (Heat or combine)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 24,
+        "n_ops": 12,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)",
+          "Step 9: Extrahe/colare (Extract or strain)",
+          "Step 10: Accipe 2 materias (Take 2 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 25,
+        "n_ops": 12,
+        "n_steps": 7,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 5: Extrahe/colare (Extract or strain)",
+          "Step 6: Divide/tere (Divide or grind)",
+          "Step 7: Accipe 5 materias (Take 5 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 26,
+        "n_ops": 7,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Divide/tere (Divide or grind)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 27,
+        "n_ops": 11,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe 3 materias (Take 3 ingredients)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 28,
+        "n_ops": 11,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Calefac/commisce (Heat or combine)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Extrahe/colare (Extract or strain)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe 2 materias (Take 2 ingredients)",
+          "Step 7: Extrahe/colare (Extract or strain)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)",
+          "Step 9: Divide/tere (Divide or grind)",
+          "Step 10: Applica/administra (Apply or administer)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 29,
+        "n_ops": 6,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere \u00d72 (Grind thoroughly, 2 passes)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 30,
+        "n_ops": 9,
+        "n_steps": 7,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe 2 materias (Take 2 ingredients)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 31,
+        "n_ops": 11,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Extrahe/colare (Extract or strain)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Divide/tere (Divide or grind)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)",
+          "Step 10: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 32,
+        "n_ops": 8,
+        "n_steps": 7,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe 2 materias (Take 2 ingredients)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 33,
+        "n_ops": 10,
+        "n_steps": 10,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Applica/administra (Apply or administer)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)",
+          "Step 10: Applica/administra (Apply or administer)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 34,
+        "n_ops": 3,
+        "n_steps": 2,
+        "steps": [
+          "Step 1: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 2: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 35,
+        "n_ops": 10,
+        "n_steps": 9,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Divide/tere (Divide or grind)",
+          "Step 5: Extrahe/colare (Extract or strain)",
+          "Step 6: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Applica/administra (Apply or administer)",
+          "Step 9: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 36,
+        "n_ops": 8,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe 3 materias (Take 3 ingredients)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe 2 materias (Take 2 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 37,
+        "n_ops": 9,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe 2 materias (Take 2 ingredients)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe 2 materias (Take 2 ingredients)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Calefac \u00d72 (Heat/mix 2 times)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 38,
+        "n_ops": 9,
+        "n_steps": 9,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Divide/tere (Divide or grind)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Divide/tere (Divide or grind)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Calefac/commisce (Heat or combine)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 39,
+        "n_ops": 6,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Applica/administra (Apply or administer)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Calefac/commisce (Heat or combine)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 40,
+        "n_ops": 11,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac \u00d74 (Heat/mix 4 times)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Extrahe/colare (Extract or strain)",
+          "Step 5: Accipe 4 materias (Take 4 ingredients)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 41,
+        "n_ops": 11,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe 3 materias (Take 3 ingredients)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe 2 materias (Take 2 ingredients)",
+          "Step 8: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 42,
+        "n_ops": 4,
+        "n_steps": 2,
+        "steps": [
+          "Step 1: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 2: Divide/tere \u00d72 (Grind thoroughly, 2 passes)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 43,
+        "n_ops": 11,
+        "n_steps": 9,
+        "steps": [
+          "Step 1: Extrahe/colare (Extract or strain)",
+          "Step 2: Divide/tere (Divide or grind)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Calefac/commisce (Heat or combine)",
+          "Step 5: Accipe materiam (Take up ingredient in hand)",
+          "Step 6: Calefac/commisce (Heat or combine)",
+          "Step 7: Accipe materiam (Take up ingredient in hand)",
+          "Step 8: Calefac \u00d73 (Heat/mix 3 times)",
+          "Step 9: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 44,
+        "n_ops": 5,
+        "n_steps": 2,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Calefac \u00d73 (Heat/mix 3 times)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 45,
+        "n_ops": 9,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Accipe 2 materias (Take 2 ingredients)",
+          "Step 2: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe 3 materias (Take 3 ingredients)",
+          "Step 5: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 46,
+        "n_ops": 11,
+        "n_steps": 8,
+        "steps": [
+          "Step 1: Divide/tere (Divide or grind)",
+          "Step 2: Applica/administra (Apply or administer)",
+          "Step 3: Accipe materiam (Take up ingredient in hand)",
+          "Step 4: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe 3 materias (Take 3 ingredients)",
+          "Step 7: Extrahe/colare (Extract or strain)",
+          "Step 8: Divide/tere (Divide or grind)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 47,
+        "n_ops": 6,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Calefac/commisce (Heat or combine)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Divide/tere (Divide or grind)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 48,
+        "n_ops": 9,
+        "n_steps": 5,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: Calefac/commisce (Heat or combine)",
+          "Step 3: Accipe 3 materias (Take 3 ingredients)",
+          "Step 4: Divide/tere \u00d73 (Grind thoroughly, 3 passes)",
+          "Step 5: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 49,
+        "n_ops": 12,
+        "n_steps": 12,
+        "steps": [
+          "Step 1: Accipe materiam (Take up ingredient in hand)",
+          "Step 2: \u26a1 Transmuta (Volatile transformation \u2014 watch carefully)",
+          "Step 3: Extrahe/colare (Extract or strain)",
+          "Step 4: Accipe materiam (Take up ingredient in hand)",
+          "Step 5: Calefac/commisce (Heat or combine)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)",
+          "Step 7: Calefac/commisce (Heat or combine)",
+          "Step 8: Accipe materiam (Take up ingredient in hand)",
+          "Step 9: Calefac/commisce (Heat or combine)",
+          "Step 10: Accipe materiam (Take up ingredient in hand)",
+          "Step 11: Applica/administra (Apply or administer)",
+          "Step 12: Extrahe/colare (Extract or strain)"
+        ]
+      },
+      {
+        "folio": "f103r",
+        "para": 50,
+        "n_ops": 10,
+        "n_steps": 6,
+        "steps": [
+          "Step 1: Calefac \u00d72 (Heat/mix 2 times)",
+          "Step 2: Accipe materiam (Take up ingredient in hand)",
+          "Step 3: Divide/tere \u00d72 (Grind thoroughly, 2 passes)",
+          "Step 4: Accipe 3 materias (Take 3 ingredients)",
+          "Step 5: Divide/tere (Divide or grind)",
+          "Step 6: Accipe materiam (Take up ingredient in hand)"
+        ]
+      }
+    ]
+  },
+  "biological_section": {
+    "total_entries": 12,
+    "relationship_types": {
+      "AREV": 11,
+      "VINIT": 11,
+      "FFUSE": 12,
+      "FSPLIT": 12,
+      "EVALT": 6,
+      "AFWD": 2
+    },
+    "entries": [
+      {
+        "folio": "f69",
+        "para": 1,
+        "source": "H",
+        "ops": [
+          "FSPLIT",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "FFUSE",
+          "VINIT",
+          "VINIT",
+          "VINIT",
+          "AREV"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 1,
+        "source": "F",
+        "ops": [
+          "FSPLIT",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "VINIT",
+          "FFUSE",
+          "VINIT",
+          "VINIT",
+          "VINIT",
+          "AREV"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 1,
+        "source": "U",
+        "ops": [
+          "FSPLIT",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "FFUSE",
+          "VINIT",
+          "VINIT",
+          "VINIT",
+          "AREV"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 2,
+        "source": "H",
+        "ops": [
+          "AREV",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "AFWD",
+          "FSPLIT",
+          "EVALT",
+          "VINIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 2,
+        "source": "F",
+        "ops": [
+          "AREV",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "AFWD",
+          "FSPLIT",
+          "EVALT",
+          "VINIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 2,
+        "source": "U",
+        "ops": [
+          "AREV",
+          "FFUSE",
+          "VINIT",
+          "FSPLIT",
+          "FFUSE",
+          "FSPLIT",
+          "EVALT",
+          "VINIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 3,
+        "source": "H",
+        "ops": [
+          "FFUSE",
+          "AREV",
+          "FSPLIT",
+          "VINIT",
+          "FSPLIT",
+          "AREV",
+          "FSPLIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 3,
+        "source": "F",
+        "ops": [
+          "FFUSE",
+          "AREV",
+          "FSPLIT",
+          "VINIT",
+          "FSPLIT",
+          "AREV",
+          "FSPLIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 3,
+        "source": "U",
+        "ops": [
+          "FFUSE",
+          "AREV",
+          "FSPLIT",
+          "VINIT",
+          "FSPLIT",
+          "AREV",
+          "FSPLIT",
+          "FSPLIT"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 4,
+        "source": "H",
+        "ops": [
+          "FSPLIT",
+          "AREV",
+          "FSPLIT",
+          "VINIT",
+          "FSPLIT",
+          "EVALT",
+          "FSPLIT",
+          "FFUSE"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 4,
+        "source": "F",
+        "ops": [
+          "FSPLIT",
+          "AREV",
+          "FSPLIT",
+          "FSPLIT",
+          "EVALT",
+          "FSPLIT",
+          "FFUSE"
+        ]
+      },
+      {
+        "folio": "f69",
+        "para": 4,
+        "source": "U",
+        "ops": [
+          "FSPLIT",
+          "FSPLIT",
+          "VINIT",
+          "FSPLIT",
+          "EVALT",
+          "FSPLIT",
+          "FFUSE"
+        ]
+      }
+    ]
+  }
+}

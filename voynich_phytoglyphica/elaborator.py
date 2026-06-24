@@ -224,12 +224,23 @@ def dosage_specification(tuple_values: list[str], d_astronomical: float) -> list
     """
     Derive specific dosage from the structural tuple and d_astronomical.
 
-    Encoding (per VOYNICH_LIFTED.md phytoglyphic morphology→instruction mapping):
-      Ç  → preparation form + base serving volume
-      Σ  → dose frequency (compound-count complexity)
-      Ω  → course duration (winding period determines treatment length)
-      Ħ  → chirality safety modifier (more stereocenters → lower range)
-      d_astronomical → potency tier (summa/alta/media/debilis) → dose multiplier
+    Encoding (VOYNICH_LIFTED.md phytoglyphic morphology→instruction mapping):
+      Ç  → preparation form
+      Σ  → drug:solvent ratio → tincture base volume (more concentrated = smaller base)
+      Γ  → extraction efficiency → tincture base volume modifier (fine = stronger)
+      Ω  → course duration; binary/trivial → caps frequency at 2×/day
+      Ħ  → chirality: 𐑫 (eternal, >4 stereocenters) drops freq 3→2×/day + lower-end warning
+              𐑖 + Σ≠𐑳 → ratio-precision note (chirality-sensitive at concentrated ratio)
+      d_astronomical → potency tier → multiplier applied to base serving
+
+    Tincture base volumes by Σ+Γ:
+      Σ=𐑙 (1:1, saturated)                      → 0.5 mL  (max concentration, minimum serving)
+      Σ=𐑕 (1:2, concentrated) + Γ=𐑲 (fine)     → 0.75 mL (concentrated + full extraction)
+      Σ=𐑕 (1:2) + Γ=𐑔 (medium)                 → 1.0 mL  (concentrated, standard extraction)
+      Σ=𐑳 (1:3, standard) + Γ=𐑲 (fine)         → 1.5 mL  (standard ratio, full extraction)
+      Σ=𐑳 (1:3) + Γ=𐑔 (medium)                 → 2.0 mL  (standard tincture — full serving)
+
+    Decoction/infusion base: 100 mL (single therapeutic cup); always 2×/day.
     """
     def _v(key: str) -> str:
         idx = _PRIM_IDX.get(key)
@@ -237,72 +248,104 @@ def dosage_specification(tuple_values: list[str], d_astronomical: float) -> list
 
     kin   = _v('Ç')
     sigma = _v('Σ')
+    gamma = _v('Γ')
     omega = _v('Ω')
     hbar  = _v('Ħ')
+    crit  = _v('⊙')
 
     # Potency tier from d_astronomical
     if d_astronomical == 0.0:
-        tier, tier_label = 2.0, 'summa'
+        tier_label, tier_mult = 'summa', 2.0
     elif d_astronomical <= 0.40:
-        tier, tier_label = 1.5, 'alta'
+        tier_label, tier_mult = 'alta', 1.5
     elif d_astronomical <= 1.00:
-        tier, tier_label = 1.0, 'media'
+        tier_label, tier_mult = 'media', 1.0
     else:
-        tier, tier_label = 0.5, 'debilis'
+        tier_label, tier_mult = 'debilis', 0.5
 
-    # Preparation form + base serving volume (from Ç)
-    _FORM_BASE = {
-        '𐑘': ('infusion (tea)',          150, 200, 'mL',    None),
-        '𐑤': ('tincture (cold maceration)', 2,  2, 'mL',   None),
-        '𐑧': ('decoction',               150, 200, 'mL',    None),
-        '𐑪': ('percolate tincture',        2,  2, 'mL',    None),
-        '𐑺': ('essential oil / distillate', 2,  3, 'drops', 'in 5 mL carrier'),
-    }
-    form_name, base_lo, base_hi, unit, qualifier = _FORM_BASE.get(
-        kin, ('preparation', 2, 2, 'mL', None)
-    )
+    # Tincture base: Σ × Γ scaling (see docstring table)
+    if sigma == '𐑙':
+        tinct_base = 0.5
+    elif sigma == '𐑕' and gamma == '𐑲':
+        tinct_base = 0.75
+    elif sigma == '𐑕':
+        tinct_base = 1.0
+    elif sigma == '𐑳' and gamma == '𐑲':
+        tinct_base = 1.5
+    else:
+        tinct_base = 2.0
 
-    # Apply potency multiplier
-    if unit == 'drops':
-        lo = round(base_lo * tier)
-        hi = round(base_hi * tier)
+    # Preparation form, serving lo/hi, unit, qualifier
+    if kin in ('𐑤', '𐑪'):
+        form_name = 'tincture (cold maceration)' if kin == '𐑤' else 'percolate tincture'
+        raw_lo = raw_hi = tinct_base * tier_mult
+        unit, qualifier = 'mL', None
+    elif kin == '𐑧':
+        form_name = 'decoction'
+        # Decoction: base 100 mL, tier multipliers separate from tincture
+        decoct_mult = {2.0: 1.5, 1.5: 1.25, 1.0: 1.0, 0.5: 0.75}[tier_mult]
+        raw_lo = raw_hi = 100 * decoct_mult
+        unit, qualifier = 'mL', None
+    elif kin == '𐑘':
+        form_name = 'infusion (tea)'
+        infus_mult = {2.0: 1.5, 1.5: 1.25, 1.0: 1.0, 0.5: 0.75}[tier_mult]
+        raw_lo = raw_hi = 150 * infus_mult
+        unit, qualifier = 'mL', None
+    elif kin == '𐑺':
+        form_name = 'essential oil / distillate'
+        raw_lo, raw_hi = 2 * tier_mult, 3 * tier_mult
+        unit, qualifier = 'drops', 'in 5 mL carrier oil'
     else:
-        lo = round(base_lo * (tier / 1.0))   # mL or mL-tea
-        hi = round(base_hi * (tier / 1.0))
-    if lo == hi:
-        dose_str = f'{lo} {unit}'
-    else:
-        dose_str = f'{lo}–{hi} {unit}'
+        form_name = 'preparation'
+        raw_lo = raw_hi = tinct_base * tier_mult
+        unit, qualifier = 'mL', None
+
+    lo = round(raw_lo, 2) if unit == 'drops' else round(raw_lo)
+    hi = round(raw_hi, 2) if unit == 'drops' else round(raw_hi)
+    # Avoid 0 rounding for very small bases
+    if lo == 0 and raw_lo > 0:
+        lo = round(raw_lo, 2)
+    if hi == 0 and raw_hi > 0:
+        hi = round(raw_hi, 2)
+
+    dose_str = f'{lo}' if lo == hi else f'{lo}–{hi}'
+    dose_str += f' {unit}'
     if qualifier:
         dose_str += f'  ({qualifier})'
 
-    # Chirality safety note (from Ħ)
-    _HBAR_NOTE = {
-        '𐑓': '',
-        '𐑒': '',
-        '𐑖': '',
-        '𐑫': 'use lower end of range (>4 stereocenters — chirality-sensitive)',
-    }
-    chiral_note = _HBAR_NOTE.get(hbar, '')
+    # Chirality notes (from Ħ)
+    chiral_warning = ''   # ⚠ line
+    chiral_note    = ''   # informational line
+    if hbar == '𐑫':
+        chiral_warning = 'eternal chirality (>4 stereocenters): use lower end of range; adhere strictly to indicated serving'
+    elif hbar == '𐑖' and sigma in ('𐑕', '𐑙'):
+        chiral_note = 'chirality-sensitive at this ratio — two-step clarification precision required'
 
-    # Frequency (from Σ + Ω)
-    if omega == '𐑷':   # trivial winding
-        freq = '2 × daily  (or as needed for single-use plants)'
-    elif omega == '𐑴': # binary winding — two phases
-        freq = '2 × daily  (one dose per extraction phase)'
-    else:
-        if sigma == '𐑙':   # single dominant compound
-            freq = '2 × daily'
+    # Frequency
+    # Decoctions and infusions: always 2×/day (volume constraint)
+    if kin in ('𐑧', '𐑘'):
+        if sigma == '𐑙':
+            freq, freq_note = '1 × daily', '(single dominant compound at decoction — one cup sufficient)'
         else:
-            freq = '3 × daily'
+            freq, freq_note = '2 × daily', ''
+    elif omega == '𐑷':
+        freq, freq_note = '2 × daily  (or as needed)', ''
+    elif omega == '𐑴':
+        freq, freq_note = '2 × daily  (one dose per extraction phase)', ''
+    else:
+        # Integer winding tinctures
+        if hbar == '𐑫':
+            # Eternal chirality: reduce 3× → 2×/day (cadence sensitivity)
+            freq, freq_note = '2 × daily', '(Ħ=𐑫 eternal: complex stereocenters — reduced cadence)'
+        elif sigma == '𐑙':
+            freq, freq_note = '2 × daily', ''
+        else:
+            freq, freq_note = '3 × daily', ''
 
     # Course duration (from Ω + ⊙)
-    crit = _v('⊙')
     if omega == '𐑭':
-        if crit == '⊙':
-            course = 'up to 6 weeks, then 2-week break before resuming'
-        else:
-            course = '4–6 weeks'
+        course = ('up to 6 weeks, then 2-week break before resuming'
+                  if crit == '⊙' else '4–6 weeks')
     elif omega == '𐑴':
         course = '2–4 weeks (acute course)'
     elif omega == '𐑷':
@@ -310,33 +353,23 @@ def dosage_specification(tuple_values: list[str], d_astronomical: float) -> list
     else:
         course = '4–6 weeks'
 
-    # Daily total — calculation differs by form
+    # Daily total
     _SIGMA_RATIO = {'𐑙': 1, '𐑕': 2, '𐑳': 3}
     ratio = _SIGMA_RATIO.get(sigma, 3)
     doses_per_day = int(freq[0])
     daily_lines = []
     if kin in ('𐑤', '𐑪'):
-        # Tincture: convert mL → dried herb equivalent via ratio
-        herb_lo = round(lo * doses_per_day / ratio, 1)
-        herb_hi = round(hi * doses_per_day / ratio, 1)
-        vol_lo  = lo * doses_per_day
-        vol_hi  = hi * doses_per_day
-        vol_str = f'{vol_lo} mL' if vol_lo == vol_hi else f'{vol_lo}–{vol_hi} mL'
-        herb_str = (f'{herb_lo} g' if herb_lo == herb_hi else f'{herb_lo}–{herb_hi} g')
+        vol_day = lo * doses_per_day
+        herb_g  = round(vol_day / ratio, 2)
+        vol_str  = f'{vol_day} mL' if lo == hi else f'{lo * doses_per_day}–{hi * doses_per_day} mL'
         daily_lines.append(
-            f'  Daily total  : {vol_str} tincture  ≡  {herb_str} dried herb/day  (1:{ratio} ratio)'
+            f'  Daily total  : {vol_str} tincture  ≡  {herb_g} g dried herb/day  (1:{ratio} ratio)'
         )
     elif kin in ('𐑘', '𐑧'):
-        # Infusion / decoction: report prepared volume only
-        vol_lo = lo * doses_per_day
-        vol_hi = hi * doses_per_day
-        vol_str = f'{vol_lo} mL' if vol_lo == vol_hi else f'{vol_lo}–{vol_hi} mL'
-        daily_lines.append(f'  Daily total  : {vol_str} prepared {form_name.split(" ")[0]}/day')
+        vol_day = lo * doses_per_day
+        daily_lines.append(f'  Daily total  : {vol_day} mL prepared {form_name.split(" ")[0]}/day')
     elif kin == '𐑺':
-        drop_lo = lo * doses_per_day
-        drop_hi = hi * doses_per_day
-        drop_str = f'{drop_lo}' if drop_lo == drop_hi else f'{drop_lo}–{drop_hi}'
-        daily_lines.append(f'  Daily total  : {drop_str} drops in carrier/day')
+        daily_lines.append(f'  Daily total  : {round(lo * doses_per_day)}–{round(hi * doses_per_day)} drops in carrier/day')
 
     width = 72
     lines = ['─' * width, '  DOSAGE']
@@ -344,11 +377,15 @@ def dosage_specification(tuple_values: list[str], d_astronomical: float) -> list
     lines.append(f'  Form         : {form_name}')
     lines.append(f'  Serving      : {dose_str}')
     lines.append(f'  Frequency    : {freq}')
+    if freq_note:
+        lines.append(f'               {freq_note}')
     lines.append(f'  Course       : {course}')
     lines += daily_lines
     lines.append(f'  Potency tier : {tier_label}  (d_astronomical = {d_astronomical:.4f})')
-    if chiral_note:
-        lines.append(f'  ⚠ {chiral_note}')
+    if chiral_warning:
+        lines.append(f'  ⚠ {chiral_warning}')
+    elif chiral_note:
+        lines.append(f'  ↳ {chiral_note}')
     lines.append('═' * width)
     return lines
 
