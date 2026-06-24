@@ -1,4 +1,4 @@
-Add 140 ARS_PHYTOGLYPHICA_EXPANDED catalog entries + vp imscribe wizard
+Add 140 ARS_PHYTOGLYPHICA_EXPANDED entries, vp imscribe wizard, README, demo
 
 programs/ingest_ars_expanded.py — new ingestion script
   - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md hardcoded as manifest
@@ -26,3 +26,24 @@ voynich_phytoglyphica/navigator.py — added section_distances(tuple_vals)
 voynich_phytoglyphica/cli.py — registered vp imscribe command
   - new subcommand wires to imscriber.run_assessment()
   - catalog path passed as data/IG_catalog.json
+
+README.md — comprehensive documentation
+  - VMS as split-register executable (6-section register table)
+  - 12-primitive pharmaceutical role table
+  - 11 structural type table with tuples, discriminators, example plants
+  - catalog coverage table by region (140 phytoglyphica entries, 5 continents)
+  - full CLI reference with example output for all 7 commands
+  - data files, module structure, API signatures
+  - self-report encoding theory (ɢ and ⊙ semantics)
+  - phytoglyphica baseline table (5 fixed primitives)
+
+demo.sh — 8-step demonstration script
+  - STEP 0: VMS section tuples (6 structural anchors)
+  - STEP 1: Type I peppermint — d=0, summa potency
+  - STEP 2: Type VI asian_ginseng — decoction (Ç=𐑧), d=0.24
+  - STEP 3: Type VII ayahuasca_vine — binary winding, eternal chirality
+  - STEP 4: Type VIII tea — trivial winding, non-critical, passive coupling
+  - STEP 5: Type XI reishi — broadcast coupling, binary winding
+  - STEP 6: full vp run pipeline (peppermint)
+  - STEP 7: belladonna (II) vs german_chamomile (IV) contrast
+  - STEP 8: vp imscribe walk-through (blue lotus example)
