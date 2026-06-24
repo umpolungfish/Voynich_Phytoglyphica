@@ -1,4 +1,4 @@
-Add 140 ARS entries, vp imscribe, ADDR gate, VMS-primary README, demo
+Add 140 ARS entries, vp imscribe, ADDR gate, vp list/search, dosage output, VMS-primary README, demo
 
 lang/voynich-engine/voynich_engine/session.py — ADDR gate (seven-gate protocol)
   - docstring was always "seven-gate" with ADDR listed but never implemented
@@ -8,34 +8,34 @@ lang/voynich-engine/voynich_engine/session.py — ADDR gate (seven-gate protocol
   - report() shows Botanical d= [PASS/FAIL] in session header
   - all six VMS sections now active participants in every session run
 
-voynich_phytoglyphica/cli.py — passes d_botanical from navigator to session
-  - cmd_run() reads distances['botanical'] from nav.lookup() and forwards
-    to sess.run(d_botanical=...) to engage the ADDR gate
-  - registered vp imscribe command (imscriber.run_assessment())
+voynich_phytoglyphica/elaborator.py — dosage_specification()
+  - new function: derives specific serving volume, frequency, course duration,
+    and daily total from structural tuple + d_astronomical
+  - Ç → preparation form and base volume (tincture mL vs decoction mL vs drops)
+  - potency tier (summa/alta/media/debilis) from d_astronomical → dose multiplier
+  - Σ + Ω → frequency and course duration
+  - Ħ=𐑫 (eternal chirality) → safety warning at lower end of range
+  - tinctures: daily total ≡ g dried herb/day via 1:N ratio
+  - decoctions/infusions: daily volume of prepared liquid only
+  - essential oils: daily drops in carrier
+
+voynich_phytoglyphica/cli.py — new commands + ADDR gate wiring + dosage
+  - cmd_run() calls dosage_specification() after elaborated recipe output
+  - cmd_list(): browse all 140 ARS phytoglyphica entries grouped by type (I–XI)
+  - cmd_search(query): keyword search across plant name and description
+  - passes d_botanical from navigator to session for ADDR gate
+  - registered vp imscribe command
+
+voynich_phytoglyphica/imscriber.py — dosage shown after VMS section distances
+  - d_astronomical from section_distances()['astronomical'] feeds dosage_specification()
 
 programs/ingest_ars_expanded.py — new ingestion script
   - 140 unique entries from ARS_PHYTOGLYPHICA_EXPANDED.md
-  - 14 cross-reference entries skipped
-  - 11 structural types (I–XI) with hardcoded Shavian tuples
-  - all 140 were new (catalog 3412 → 3552 entries)
-  - global coverage: all 5 inhabited continents
+  - catalog 3412 → 3552 entries
 
-voynich_phytoglyphica/imscriber.py — new interactive imscription wizard
-  - 5 fixed baseline primitives shown, 7 discriminating primitives assessed
-  - shows tuple, elaborated protocol, VMS section distances
-  - optional catalog save and immediate session run
-
-voynich_phytoglyphica/navigator.py — added section_distances(tuple_vals)
-  - raw 12-element tuple → distances to all 6 VMS sections
+voynich_phytoglyphica/navigator.py — list_phytoglyphica(), section_distances()
+  - list_phytoglyphica(query=None): filter by baseline, group by type label
+  - section_distances(tuple_vals): in-memory tuple → distances to all 6 VMS sections
 
 README.md — comprehensive documentation, VMS-primary framing
-  - VMS physical description (Beinecke MS 408, 1404–1438, six sections)
-  - section-by-section description of what each actually shows
-  - seven-gate session protocol (INIT ADDR GATE1 GATE2 GATE3 OUTPUT ELABORATION)
-  - ADDR gate rationale: botanical illustrations as identity confirmation register
-  - 11 structural type table framed as VMS botanical categories
-  - self-report: how VMS illustrations encode pharmaceutical parameters
-  - CLI reference with real VMS folio references (f11r, f103r, f69, f80v)
-
-demo.sh — 8-step demonstration script covering five structural types,
-  the full vp run pipeline (now showing ADDR gate), type contrast, vp imscribe
+demo.sh — 8-step demonstration with ADDR gate and vp list/search/imscribe

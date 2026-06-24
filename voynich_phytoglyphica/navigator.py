@@ -143,6 +143,52 @@ def list_vms_plants() -> list[str]:
     return [s for s in systems if 'voynich' in s.lower()]
 
 
+# Phytoglyphica baseline: fixed for all VMS botanical entries.
+_BASELINE = {'Ð': '𐑦', 'Þ': '𐑸', 'Ř': '𐑾', 'Φ': '𐑬', 'ƒ': '𐑱'}
+
+
+def _is_phytoglyphica(entry: dict) -> bool:
+    """True if the entry carries the phytoglyphica baseline tuple (flat catalog dict)."""
+    return all(entry.get(k) == v for k, v in _BASELINE.items())
+
+
+_TYPE_RE = __import__('re').compile(
+    r'Type\s+(XI|IX|VIII|VII|VI|IV|III|II|X|V|I)'
+)
+
+
+def list_phytoglyphica(query: str | None = None) -> list[dict]:
+    """
+    Return all phytoglyphica botanical entries from the catalog.
+
+    Each result dict has: name, description, tuple (dict), type_label.
+
+    If query is given, filter to entries whose name or description contains
+    the query string (case-insensitive).
+    """
+    _nav.load_catalog()
+
+    results = []
+    for raw in _nav.CATALOG:
+        if not _is_phytoglyphica(raw):
+            continue
+        name = raw.get('name', '')
+        desc = raw.get('description', '')
+        if query and query.lower() not in name.lower() and query.lower() not in desc.lower():
+            continue
+        m = _TYPE_RE.search(desc)
+        type_label = m.group(0) if m else ''
+        results.append({
+            'name':        name,
+            'description': desc,
+            'tuple':       {k: raw.get(k, '') for k in _PRIM_KEYS},
+            'type_label':  type_label,
+        })
+
+    results.sort(key=lambda r: (r['type_label'], r['name']))
+    return results
+
+
 def section_tuples() -> dict[str, list[str]]:
     """Return the catalog tuples for all six VMS sections."""
     _nav.load_catalog()

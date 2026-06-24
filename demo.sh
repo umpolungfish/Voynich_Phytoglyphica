@@ -108,6 +108,6 @@ echo
 banner "DEMO COMPLETE"
 echo
 echo "  Catalog : $(python3 -c "import json; c=json.load(open('data/IG_catalog.json')); print(len(c), 'entries')" 2>/dev/null || echo "3552 entries")"
-echo "  Commands: vp plant <name> | vp run <name> | vp imscribe | vp sections"
+echo "  Commands: vp list | vp search <keyword> | vp plant <name> | vp run <name> | vp imscribe | vp sections"
 echo "  Docs    : manuscripts/ENGINE.md | manuscripts/VOYNICH_PHYTOGLYPHICA.md"
 echo

@@ -3,6 +3,8 @@ Voynich Phytoglyphica — unified CLI.
 
   vp session   --folio f11r | --potency summa | --part root | --plant <name>
   vp plant     <name>
+  vp list                          # browse all catalog entries by structural type
+  vp search    <keyword>           # keyword search across name + description
   vp summa
   vp sections
   vp compile   [--log FILE]
@@ -28,7 +30,7 @@ if str(_ENGINE) not in sys.path:
 
 from voynich_engine.session import VoynichSession
 from . import navigator as nav
-from .elaborator import elaborate_protocol, annotate_step, format_protocol_header
+from .elaborator import elaborate_protocol, annotate_step, format_protocol_header, dosage_specification
 from .imscriber import run_assessment
 
 
@@ -228,7 +230,103 @@ def cmd_run(args: argparse.Namespace) -> int:
             print()
         print('═' * width)
 
+    # Step 6: dosage specification — always displayed at end
+    print()
+    for line in dosage_specification(tuple_vals, info['d_astronomical']):
+        print(line)
+
     return 0 if state.gate3_passed else 1
+
+
+# ---------------------------------------------------------------------------
+# vp list  (browse all phytoglyphica catalog entries by structural type)
+# ---------------------------------------------------------------------------
+
+_TYPE_NAMES = {
+    'Type I':    'Aromatic Baseline',
+    'Type II':   'Tropane',
+    'Type III':  'Cardiac Glycoside',
+    'Type IV':   'Non-Critical Aromatic',
+    'Type V':    'Eternal / Axiom A',
+    'Type VI':   'Adaptogen',
+    'Type VII':  'β-Carboline',
+    'Type VIII': 'Caffeine-Purine',
+    'Type IX':   'Opioid Alkaloid',
+    'Type X':    'Triterpene Saponin',
+    'Type XI':   'Fungal Interface',
+}
+
+
+def cmd_list(_args: argparse.Namespace) -> int:
+    entries = nav.list_phytoglyphica()
+    if not entries:
+        print('No phytoglyphica entries found in catalog.')
+        return 1
+
+    # only show entries that carry a structural type label
+    labeled   = [e for e in entries if e['type_label']]
+    unlabeled = len(entries) - len(labeled)
+
+    # group by type_label (already sorted)
+    from itertools import groupby
+    width = 72
+    print('═' * width)
+    print(f'  VOYNICH PHYTOGLYPHICA  —  {len(labeled)} catalog entries  ({11} types)')
+    print('─' * width)
+    for type_label, group in groupby(labeled, key=lambda e: e['type_label']):
+        display = f'{type_label}  {_TYPE_NAMES.get(type_label, "")}'
+        print(f'\n  ▸ {display}')
+        for e in group:
+            # pull Latin name + family from description  "Latin | Family — ..."
+            desc = e['description']
+            bio = ''
+            if '|' in desc and '—' in desc:
+                bio = desc.split('|')[0].strip()
+            elif '|' in desc:
+                bio = desc.split('|')[0].strip()
+            line = f'    {e["name"]:<32}  {bio}'
+            print(line[:width])
+
+    print()
+    print('─' * width)
+    if unlabeled:
+        print(f'  ({unlabeled} pre-existing catalog entries share the phytoglyphica baseline'
+              f' but have no type label — use vp plant <name> to access them)')
+    print('  Use: vp plant <name>  or  vp run <name>')
+    print('  Or:  vp search <keyword>  to filter by name, family, or compound class')
+    print('═' * width)
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# vp search  (keyword search across name + description)
+# ---------------------------------------------------------------------------
+
+def cmd_search(args: argparse.Namespace) -> int:
+    query = args.query
+    entries = nav.list_phytoglyphica(query=query)
+    width = 72
+    print('═' * width)
+    if not entries:
+        print(f'  No entries matching {query!r}')
+        print('═' * width)
+        return 1
+
+    print(f'  SEARCH  {query!r}  →  {len(entries)} match{"es" if len(entries) != 1 else ""}')
+    print('─' * width)
+    for e in entries:
+        type_label = e['type_label'] or '?'
+        desc = e['description']
+        # brief: up to first period or 60 chars, whichever comes first
+        brief_start = desc.find('—')
+        brief = desc[brief_start + 1:].strip() if brief_start != -1 else desc
+        if '.' in brief:
+            brief = brief[:brief.index('.') + 1]
+        brief = brief[:58]
+        print(f'  {e["name"]:<32}  [{type_label}]')
+        print(f'    {brief}')
+    print('═' * width)
+    return 0
 
 
 # ---------------------------------------------------------------------------
@@ -259,6 +357,13 @@ def main() -> None:
     p_plant = sub.add_parser('plant', help='Look up a plant in the IG catalog')
     p_plant.add_argument('name', help='Catalog entry name (e.g. artemisia_absinthium)')
 
+    # list
+    sub.add_parser('list', help='Browse all phytoglyphica catalog entries by structural type')
+
+    # search
+    p_search = sub.add_parser('search', help='Keyword search across plant name and description')
+    p_search.add_argument('query', help='Keyword (e.g. artemisia, Lamiaceae, tropane)')
+
     # summa
     sub.add_parser('summa', help='List all summa potency pharmaceutical entries')
 
@@ -281,6 +386,8 @@ def main() -> None:
     dispatch = {
         'session':  cmd_session,
         'plant':    cmd_plant,
+        'list':     cmd_list,
+        'search':   cmd_search,
         'summa':    cmd_summa,
         'sections': cmd_sections,
         'compile':  cmd_compile,

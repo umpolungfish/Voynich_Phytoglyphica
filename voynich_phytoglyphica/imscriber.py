@@ -225,15 +225,26 @@ def run_assessment(catalog_path: Optional[Path] = None) -> int:
             pass  # elaboration is informational; don't abort on failure
 
         # ── Distances to VMS sections ────────────────────────────────────────
+        d_astronomical = float('inf')
         try:
             from . import navigator as nav
             dists = nav.section_distances(tuple_vals)
+            d_astronomical = dists.get('astronomical', float('inf'))
             print()
             print(_hr())
             print('  Distances to VMS sections:')
             for sec, d in sorted(dists.items(), key=lambda x: x[1]):
                 marker = ' ◀ d=0' if d == 0.0 else ''
                 print(f'    {sec:<16} d = {d:.4f}{marker}')
+        except Exception:
+            pass
+
+        # ── Dosage specification ─────────────────────────────────────────────
+        try:
+            from .elaborator import dosage_specification
+            print()
+            for line in dosage_specification(tuple_vals, d_astronomical):
+                print(line)
         except Exception:
             pass
 
