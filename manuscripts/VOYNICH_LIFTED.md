@@ -1,6 +1,4 @@
-# The Voynich Manuscript: A Complete Integration (Expanded Edition)
-
-## The Universal Engine, the Alchemical Pharmacy, the Recipe Corpus, and the Botanical Walkthroughs
+# The Voynich Manuscript: A Lost Phytoglyphic Pharmacoepia
 
 **Author:** Lando Mills
 **Date:** June 2026
@@ -19,15 +17,15 @@ The linguistic approach was more seductive. In 2014, Stephen Bax proposed a part
 
 The hoax hypothesis was the intellectual default — and it was the hardest to let go of. Gordon Rugg's grille cipher demonstration showed that a 16th-century forger *could* have generated Voynichese-like text using a Cardan grille and a table of syllables. It proved that forgery was *possible*, not that it had *occurred*. And it explained nothing about the plant illustrations, whose morphological precision — serration angles, trichome distributions, phyllotactic ratios — exceeds what any forger would invent.
 
-**Four** investigations converged on a different category of answer:
+**Four** investigations converged on a different category of answer.
 
-1. **The Universal Engine reading:** The Voynich is a schematic — a categorical computing architecture whose twelve EVA glyph families are opcodes in a self-bootstrapping instruction set. The "text" executes.
+**The Universal Engine reading:** The Voynich is a schematic — a categorical computing architecture whose twelve EVA glyph families are opcodes in a self-bootstrapping instruction set. The "text" executes.
 
-2. **The Grammar's Self-Portrait reading:** The complete manuscript is a structural isomorphism with the Imscribing Grammar — it encodes, and is encoded by, the same framework used to read it. The manuscript and its interpretation are the same structural type.
+**The Grammar's Self-Portrait reading:** The complete manuscript is a structural isomorphism with the Imscribing Grammar — it encodes, and is encoded by, the same framework used to read it. The manuscript and its interpretation are the same structural type.
 
-3. **The Renaissance Alchemical Pharmacy reading:** The manuscript is a pharmaceutical database containing **1,491 botanical entries**, **1,076 procedural recipes**, and a biological substance-relationship pointer graph. It is a working reference, not a puzzle. Both enumerations are now complete — see *VOYNICH_COMPLETE_LISTING.md*.
+**The Renaissance Alchemical Pharmacy reading:** The manuscript is a pharmaceutical database containing **1,491 botanical entries**, **1,076 procedural recipes**, and a biological substance-relationship pointer graph. It is a working reference, not a puzzle. Both enumerations are now complete — see *VOYNICH_COMPLETE_LISTING.md*.
 
-4. **The Botanical Walkthrough reading:** Each plant illustration is an **instruction set**. Plant morphology — serration, trichome distribution, phyllotaxis, compound ratios — encodes opcodes directly. The shape of the leaf *is* the recipe for processing the leaf. This document provides complete walkthroughs of three plants through all three Voynich gates.
+**The Botanical Walkthrough reading:** Each plant illustration is an **instruction set**. Plant morphology — serration, trichome distribution, phyllotaxis, compound ratios — encodes opcodes directly. The shape of the leaf *is* the recipe for processing the leaf. This document provides complete walkthroughs of three plants through all three Voynich gates.
 
 These four readings do not contradict each other. They are the same three-gate architecture viewed through four lenses: computation, structure, data, and demonstration.
 
@@ -41,19 +39,7 @@ The pharmacy catalog is fully enumerated. The 1,491 entries span 115 folios, ran
 
 ### 2. Preparation Methods
 
-The dominant preparation class is **trituratio** (grinding/powdering), which appears in 847 of 1,491 entries — either alone (465) or combined with extractio (238) or calcinatio (144). The grammar of preparation is layered: single-method entries tend toward simple forms (pulvis, herba sicca), while compound-method entries produce the complex outputs (mixtura, unguentum). The full distribution:
-
-| Preparatio | Count | % |
-|:-----------|------:|--:|
-| trituratio (grinding/powdering) | 465 | 31.2% |
-| trituratio + extractio (steeping/distilling) | 238 | 15.9% |
-| extractio (steeping/distilling) | 219 | 14.7% |
-| calcinatio (heating/roasting) | 145 | 9.7% |
-| trituratio + calcinatio | 144 | 9.7% |
-| crudum (raw/crude) | 131 | 8.8% |
-| calcinatio + extractio | 75 | 5.0% |
-| compositum (compound) | 40 | 2.7% |
-| other combinations | 34 | 2.3% |
+The dominant preparation class is **trituratio** (grinding/powdering), which appears in 847 of 1,491 entries — either alone (465) or combined with extractio (238) or calcinatio (144). The grammar of preparation is layered: single-method entries tend toward simple forms (pulvis, herba sicca), while compound-method entries produce the complex outputs (mixtura, unguentum). By count: *trituratio* alone (465, 31.2%), *trituratio + extractio* (238, 15.9%), *extractio* alone (219, 14.7%), *calcinatio* (145, 9.7%), *trituratio + calcinatio* (144, 9.7%), *crudum* (131, 8.8%), *calcinatio + extractio* (75, 5.0%), *compositum* (40, 2.7%), and other combinations (34, 2.3%).
 
 **Crudum** (131 entries, 8.8%) is the unmarked preparation — no processing, raw botanical material directly. It constitutes the baseline class against which all processed preparations are measured. The grammar does not treat raw use as a degenerate case; it is a full preparation type with its own structural address.
 
@@ -61,39 +47,23 @@ The dominant preparation class is **trituratio** (grinding/powdering), which app
 
 **Pulvis** (powder) is the dominant output form at 715 entries — 47.9% of the entire catalog. This is not surprising given the trituratio dominance in preparation: grinding produces powder. The powder-dominant character of the catalog is structurally consistent with a Renaissance pharmacy that lacks refrigeration, favors long shelf life, and needs forms that travel.
 
-| Forma | Count | % |
-|:------|------:|--:|
-| pulvis (powder) | 715 | 47.9% |
-| tinctura (tincture/extract) | 200 | 13.4% |
-| herba sicca (dried herb) | 176 | 11.8% |
-| unguentum (ointment/salve) | 156 | 10.5% |
-| mixtura (mixture) | 151 | 10.1% |
-| decoctum (decoction) | 93 | 6.2% |
+The distribution across six forms: *pulvis* (715, 47.9%), *tinctura* (200, 13.4%), *herba sicca* (176, 11.8%), *unguentum* (156, 10.5%), *mixtura* (151, 10.1%), and *decoctum* (93, 6.2%).
 
 ### 4. Potency Distribution
 
-Potency is the sharpest structural discriminator in the catalog. The distribution is heavily left-skewed:
-
-| Potentia | Count | % |
-|:---------|------:|--:|
-| mitis (mild) | 949 | 63.6% |
-| simplex (simple) | 270 | 18.1% |
-| media (moderate) | 265 | 17.8% |
-| summa (highest) | 7 | 0.47% |
+Potency is the sharpest structural discriminator in the catalog. The distribution is heavily left-skewed: *mitis* (949, 63.6%), *simplex* (270, 18.1%), *media* (265, 17.8%), and *summa* (7, 0.47%).
 
 The summa tier is structurally exceptional: 7 entries in 1,491 (0.47%). These are not simply the most potent entries — they are the entries where all four structural components (substrate, process, duration class, yield class) achieve simultaneous Frobenius closure at Gate 1. The seven are the highest-closure entries in the corpus, and their folio locations carry structural weight.
 
 ### 5. The Seven Summa Entries
 
-| Folio/Para | Preparatio | Forma | Pars plantae | Applicatio | n_ops |
-|:-----------|:-----------|:------|:-------------|:-----------|------:|
-| f11r/p6 | extractio | mixtura | folium/flos | generalis | 11 |
-| f26r/p3 | calcinatio | unguentum | folium/flos | generalis | 9 |
-| f33v/p8 | extractio | mixtura | folium/flos | generalis | 11 |
-| f35r/p10 | trituratio | mixtura | folium/flos | generalis | 9 |
-| f39r/p3 | trituratio + extractio | mixtura | radix | generalis | 12 |
-| f42r/p19 | compositum | mixtura | radix | generalis | 8 |
-| f48v/p1 | trituratio | pulvis | folium/flos | generalis | 13 |
+**f11r/p6** — *extractio* → *mixtura*, folium/flos, generalis, 11 ops  
+**f26r/p3** — *calcinatio* → *unguentum*, folium/flos, generalis, 9 ops  
+**f33v/p8** — *extractio* → *mixtura*, folium/flos, generalis, 11 ops  
+**f35r/p10** — *trituratio* → *mixtura*, folium/flos, generalis, 9 ops  
+**f39r/p3** — *trituratio + extractio* → *mixtura*, radix, generalis, 12 ops  
+**f42r/p19** — *compositum* → *mixtura*, radix, generalis, 8 ops  
+**f48v/p1** — *trituratio* → *pulvis*, folium/flos, generalis, 13 ops
 
 Five of the seven are leaf/flower-based; two are root-based (f39r/p3, f42r/p19). Five produce mixtura outputs; one unguentum (f26r/p3); one pulvis (f48v/p1). The mixtura dominance at summa potency reflects the structural requirement for multi-stream recombination: the highest-closure preparations are those that have undergone FSPLIT and FFUSE, not single-stream outputs.
 
@@ -103,14 +73,7 @@ The f48v/p1 entry has the highest n_ops in the summa tier (13) but produces only
 
 ### 6. Plant Part Economics
 
-The catalog resolves into four plant-part classes:
-
-| Pars plantae | Count | % |
-|:-------------|------:|--:|
-| folium/flos (leaf/flower) | 789 | 52.9% |
-| radix (root/rhizome) | 393 | 26.4% |
-| semen/fructus (seed/fruit) | 170 | 11.4% |
-| herba tota (whole herb) | 139 | 9.3% |
+The catalog resolves into four plant-part classes: *folium/flos* (leaf/flower, 789, 52.9%), *radix* (root/rhizome, 393, 26.4%), *semen/fructus* (seed/fruit, 170, 11.4%), and *herba tota* (whole herb, 139, 9.3%).
 
 The leaf/flower dominance (52.9%) is consistent with a pharmacy that prioritizes accessible surface anatomy over excavation. Root-based entries (26.4%) carry systematically higher n_ops — the root is harder to process, requires more steps, and tends toward higher potency. The mean n_ops for radix entries is 7.41 versus 6.68 for folium/flos. This is not coincidence: the root's structural complexity (higher Ħ, longer extraction times) requires more primitive operations to fully resolve.
 
@@ -118,12 +81,7 @@ The leaf/flower dominance (52.9%) is consistent with a pharmacy that prioritizes
 
 The overwhelming majority of entries (1,268 of 1,491, 85.0%) carry generalis application — no specific route specified. This is structurally correct for a reference pharmacy: the preparation is complete, the specific administrative route is physician-determined, not catalog-determined.
 
-| Applicatio | Count | % |
-|:-----------|------:|--:|
-| generalis (general use) | 1,268 | 85.0% |
-| inhalatio (respiratory) | 114 | 7.6% |
-| oralis (internal) | 74 | 5.0% |
-| topicalis (external) | 35 | 2.3% |
+Routes by count: *generalis* (1,268, 85.0%), *inhalatio* (114, 7.6%), *oralis* (74, 5.0%), and *topicalis* (35, 2.3%).
 
 The 114 inhalatio entries are structurally interesting. Inhalation preparations tend toward volatile chemistry (essential oils, aromatic aldehydes, terpenes). Confirming this: of the 37 entries flagged volatilis=yes in the catalog, 28 carry inhalatio application — a 75.7% co-occurrence.
 
@@ -131,23 +89,13 @@ The 114 inhalatio entries are structurally interesting. Inhalation preparations 
 
 Three binary flags in the catalog carry structural information that does not reduce to the other fields:
 
-- **volatilis** (37 entries, 2.5%): Volatile chemistry — essential oils, aldehydes, terpenes. Requires sealed storage; shelf life is preparation-phase-limited, not storage-phase-limited.
-- **fixatio_requiritur** (71 entries, 4.8%): Fixation required — the preparation needs a fixative (resin, wax, fats) to stabilize an otherwise fugitive active fraction. Typically unguentum outputs.
-- **indicatio_specifica** (322 entries, 21.6%): Specific indication — the preparation targets a defined therapeutic condition rather than general health maintenance.
+**Volatilis** (37 entries, 2.5%) marks volatile chemistry — essential oils, aldehydes, terpenes — requiring sealed storage; shelf life is preparation-phase-limited, not storage-phase-limited. **Fixatio_requiritur** (71 entries, 4.8%) marks preparations that need a fixative (resin, wax, fats) to stabilize a fugitive active fraction, typically unguentum outputs. **Indicatio_specifica** (322 entries, 21.6%) marks preparations targeting a defined therapeutic condition rather than general health maintenance.
 
 The 322 indicatio_specifica entries are 21.6% of the corpus — a substantial specific-indication library embedded within a generalist reference. They represent the catalog's most clinically targeted content.
 
 ### 9. Folio Structure
 
-The 1,491 entries span 115 folios. The densest folios are:
-
-| Folio | Entries |
-|:------|--------:|
-| f58r | 41 |
-| f58v | 37 |
-| f66r | 32 |
-| f17v | 23 |
-| f37v | 23 |
+The 1,491 entries span 115 folios. The densest folios are f58r (41 entries), f58v (37), f66r (32), and f17v and f37v (23 each).
 
 The sparsest folios (f11v: 5, f65v: 6, f38r: 6, f25r: 6, f5v: 6) are not structurally degenerate — they contain entries of normal or above-normal n_ops. Sparse folios appear to mark structural transitions between botanical classes, not gaps in the pharmacy.
 
@@ -161,23 +109,11 @@ The bifolium f58r/f58v — 41+37 = 78 consecutive entries — is the catalog's d
 
 The recipe corpus occupies 28 folios spanning f103r through f116v — the final quire of the VMS. The distribution is structured: f103r carries 50 entries (the densest single page in the recipe section); all remaining 27 folio pages carry 38 entries each. This regularity is not incidental. The recipe section is formatted as a fixed-capacity reference, with f103r functioning as the incipit — the densest opening that establishes the section's operational vocabulary before settling into the steady cadence of 38 entries per page.
 
-| Folio range | Pages | Entries |
-|:------------|------:|--------:|
-| f103r | 1 | 50 |
-| f103v – f116v | 27 | 1,026 |
-| **Total** | **28** | **1,076** |
+f103r contributes 1 page with 50 entries as the incipit; f103v through f116v supply the remaining 27 pages and 1,026 entries, for a total of 28 pages and 1,076 entries.
 
 ### 11. Recipe Type Distribution
 
-| Type | Count | % |
-|:-----|------:|--:|
-| powder/pulvis (grinding-dominant) | 390 | 36.2% |
-| compound formula | 250 | 23.2% |
-| extraction/tincture (steeping-dominant) | 209 | 19.4% |
-| decoction/elixir (heat-dominant) | 150 | 13.9% |
-| application preparation | 40 | 3.7% |
-| alchemical (volatile reaction) | 22 | 2.0% |
-| preservation/curing | 15 | 1.4% |
+Seven types cover the corpus: powder/*pulvis* (grinding-dominant, 390, 36.2%), compound formula (250, 23.2%), extraction/tincture (steeping-dominant, 209, 19.4%), decoction/elixir (heat-dominant, 150, 13.9%), application preparation (40, 3.7%), alchemical/volatile reaction (22, 2.0%), and preservation/curing (15, 1.4%).
 
 The powder/pulvis dominance (390 entries, 36.2%) mirrors the pharmacy's forma distribution. The recipe section does not merely list outputs — it specifies processes — but the process grammar is skewed by the same structural logic that makes pulvis the dominant output form: grinding is the most generally applicable operation, requires the fewest environmental dependencies, and produces the most stable results.
 
@@ -187,18 +123,19 @@ The powder/pulvis dominance (390 entries, 36.2%) mirrors the pharmacy's forma di
 
 The recipe corpus operates on seventeen step primitives:
 
-| Step | Latin | Structural class |
-|:-----|:------|:----------------|
-| Accipe materiam | Take up ingredient (1) | Intake |
-| Accipe 2/3/4/5 materias | Take up ingredients (2–5) | Intake |
-| Divide/tere | Divide or grind | Mechanical reduction |
-| Divide/tere ×2/3/4 | Grind, multiple passes | Mechanical reduction |
-| Calefac/commisce | Heat or combine | Thermal |
-| Calefac ×2/3/4 | Heat, multiple passes | Thermal |
-| Extrahe/colare | Extract or strain | Separation |
-| Compone | Compose/formulate | Recombination |
-| Applica/administra | Apply or administer | Output |
-| ⚡ Transmuta | Volatile transformation | Alchemical output |
+*Intake:* **Accipe materiam** (take up ingredient), **Accipe 2/3/4/5 materias** (take up ingredients, 2–5)
+
+*Mechanical reduction:* **Divide/tere** (divide or grind), **Divide/tere ×2/3/4** (grind, multiple passes)
+
+*Thermal:* **Calefac/commisce** (heat or combine), **Calefac ×2/3/4** (heat, multiple passes)
+
+*Separation:* **Extrahe/colare** (extract or strain)
+
+*Recombination:* **Compone** (compose/formulate)
+
+*Output:* **Applica/administra** (apply or administer)
+
+*Alchemical output:* ⚡ **Transmuta** (volatile transformation)
 
 These seventeen primitives cover the complete operational space of Renaissance pharmaceutical processing. Every preparation that the pharmacy section specifies — every trituratio, every extractio, every calcinatio, every compositum — maps to one or more of these recipe steps. The recipe corpus is the procedural complement to the pharmacy's parametric catalog: the pharmacy says *what*; the recipe section says *how*.
 
@@ -220,14 +157,12 @@ The average recipe is 7.46 steps. The minimum is 2 steps (a single-action Accipe
 
 The pharmacy catalog (Part I) and the recipe corpus (Part II) are structurally isomorphic at the preparation-method level. Every preparatio in the pharmacy maps to one or more recipe step sequences:
 
-| Pharmacy preparatio | Recipe step sequence |
-|:--------------------|:---------------------|
-| trituratio | Divide/tere [×N] → Compone |
-| extractio | Extrahe/colare → Compone |
-| calcinatio | Calefac/commisce [×N] → Compone |
-| trituratio + extractio | Divide/tere → Extrahe/colare → Compone |
-| compositum | Accipe N materias → [mixed steps] → Compone |
-| crudum | Accipe materiam → Applica/administra |
+*trituratio* → Divide/tere [×N] → Compone  
+*extractio* → Extrahe/colare → Compone  
+*calcinatio* → Calefac/commisce [×N] → Compone  
+*trituratio + extractio* → Divide/tere → Extrahe/colare → Compone  
+*compositum* → Accipe N materias → [mixed steps] → Compone  
+*crudum* → Accipe materiam → Applica/administra
 
 The pharmacy encodes the *parameter set* of a preparation (what plant part, what potency, what form). The recipe section encodes the *process sequence*. Together they constitute a two-layer pharmaceutical database: the catalog layer and the procedural layer. Neither is interpretable without the other.
 
@@ -235,9 +170,7 @@ The pharmacy encodes the *parameter set* of a preparation (what plant part, what
 
 ### 13b. The Complete Enumeration
 
-The complete listing (*VOYNICH_COMPLETE_LISTING.md*, 13,536 lines, 695 KB) contains:
-- Every pharmacy entry with full field display, grouped by folio, globally numbered 1–1,491
-- Every recipe entry with full step sequences, grouped by folio, globally numbered 1–1,076
+The complete listing (*VOYNICH_COMPLETE_LISTING.md*, 13,536 lines, 695 KB) contains every pharmacy entry with full field display, grouped by folio and globally numbered 1–1,491, and every recipe entry with full step sequences, grouped by folio and globally numbered 1–1,076.
 
 This is the first complete enumeration of the VMS pharmaceutical database. Prior analyses cited aggregate counts without per-entry resolution. The enumeration closes that gap: every claim in this manuscript that cites a specific folio/para address is traceable to a specific row in the listing.
 
@@ -253,13 +186,15 @@ The plants were the manuscript's most resistant feature. Botanists catalogued th
 
 Phytoglyphic encoding satisfies three structural requirements: the encoding is deterministic (same rule applied to same drawing yields same protocol), self-verifying (applying the extracted protocol to the plant yields what the morphology specifies), and general (the same morphological features encode instructions across different plant families). Five morphological features carry preparation instructions:
 
-| Morphological Feature | Pharmaceutical Instruction |
-|------------------------|---------------------------|
-| **Bilateral serration** (leaf margin mirror symmetry) | Cleave the volatile ester bonds — the serrated margin is the cut pattern for releasing the essential oil backbone |
-| **Trichome density** (glandular hair distribution) | Access the schizogenous oil ducts — trichome density specifies menstruum concentration and contact time |
-| **Compound ratio** (e.g., thujone α:β ≈ 1.4:1) | Balance the ketone fraction — the ratio in the plant IS the target ratio in the preparation |
-| **Bitter principle** (sesquiterpene lactone threshold) | Gate the pharmaceutical branch — bitterness at the correct threshold confirms preparation potency |
-| **Fibonacci phyllotaxy** (spiral angle ~137.5°) | Set the extraction pass count and fix the menstruum base (ethanol 70%) — one complete winding per extraction pass |
+**Bilateral serration** (leaf margin mirror symmetry): cleave the volatile ester bonds — the serrated margin is the cut pattern for releasing the essential oil backbone.
+
+**Trichome density** (glandular hair distribution): access the schizogenous oil ducts — trichome density specifies menstruum concentration and contact time.
+
+**Compound ratio** (e.g., thujone α:β ≈ 1.4:1): balance the ketone fraction — the ratio in the plant IS the target ratio in the preparation.
+
+**Bitter principle** (sesquiterpene lactone threshold): gate the pharmaceutical branch — bitterness at the correct threshold confirms preparation potency.
+
+**Fibonacci phyllotaxy** (spiral angle ~137.5°): set the extraction pass count and fix the menstruum base (ethanol 70%) — one complete winding per extraction pass.
 
 A plant imscribed as a self-encoding recipe — *Artemisia absinthium* — is structurally identical ($d = 0.0000$) to the Voynich's astronomical and cosmological sections. The wormwood and the star chart are the same structural type.
 
@@ -274,21 +209,17 @@ A plant imscribed as a self-encoding recipe — *Artemisia absinthium* — is st
 **Entry:** *Artemisia absinthium* L. (Wormwood, Grande Absinthe)
 **Family:** Asteraceae
 **Habitat:** Temperate Eurasia, widely naturalized; dry, disturbed soils, roadsides, waste places.
-**Macroscopic morphology:**
-- **Leaves:** Deeply dissected, 2–3 pinnatisect, silvery-white on both surfaces from a dense indumentum of T-shaped trichomes. The bilateral serration of the leaf margin is precise — each leaf is mirrored across the midrib with sub-millimeter fidelity. This symmetry is the first instruction.
-- **Trichomes:** Two types: (1) T-shaped non-glandular trichomes forming the silvery pubescence, and (2) biseriate glandular trichomes (10-celled, sunken in epidermal pits) that secrete the essential oil. The density ratio of glandular to non-glandular trichomes is approximately 1:8 — a ratio that specifies the menstruum concentration for oil extraction.
-- **Phyllotaxy:** Alternate spiral, divergence angle 137.5° (Fibonacci). The Fibonacci $(1,2)$ pair yields one complete winding per two leaves: $\Omega = 1$.
-- **Flowers:** Capitula (composite heads), pale yellow, numerous, arranged in terminal panicles. Ray florets absent — the capitulum is discoid, composed entirely of tubular disc florets.
-- **Fruit:** Cypsela (achene), ~1 mm, without pappus.
+**Macroscopic morphology:** Leaves are deeply dissected, 2–3 pinnatisect, silvery-white on both surfaces from a dense indumentum of T-shaped trichomes; the bilateral serration of the leaf margin is precise — each leaf is mirrored across the midrib with sub-millimeter fidelity, and this symmetry is the first instruction. Two trichome types are present: T-shaped non-glandular trichomes forming the silvery pubescence, and biseriate glandular trichomes (10-celled, sunken in epidermal pits) that secrete the essential oil — the density ratio of glandular to non-glandular trichomes is approximately 1:8, specifying the menstruum concentration for oil extraction. Phyllotaxy is alternate spiral at divergence angle 137.5° (Fibonacci), with the $(1,2)$ pair yielding one complete winding per two leaves: $\Omega = 1$. Flowers are capitula (composite heads), pale yellow, numerous, arranged in terminal panicles, with ray florets absent and the capitulum discoid throughout. Fruit is a cypsela (achene), ~1 mm, without pappus.
 
 #### 15.2 Chemical Constituents
 
-| Compound Class | Key Compounds | Concentration | Gate Role |
-|:---------------|:--------------|:-------------|:----------|
-| **Essential oil** | α-thujone, β-thujone, (Z)-epoxyocimene, chrysanthenyl acetate, sabinyl acetate | 0.5–2.0% of dried herb | Gate 1 — the volatile fraction, released by cleaving the glandular trichomes |
-| **Sesquiterpene lactones** | Absinthin, artabsin, anabsinthin, matricin | 0.2–0.5% | Gate 2 — the bitter principle; absinthin detection threshold ~1:30,000 |
-| **Flavonoids** | Quercetin, kaempferol, rutin | 0.3–1.0% | Secondary validation |
-| **Phenolic acids** | Chlorogenic acid, caffeic acid | 1.0–2.5% | Stability markers |
+**Essential oil** (0.5–2.0% of dried herb): α-thujone, β-thujone, (Z)-epoxyocimene, chrysanthenyl acetate, sabinyl acetate. Gate 1 — the volatile fraction, released by cleaving the glandular trichomes.
+
+**Sesquiterpene lactones** (0.2–0.5%): absinthin, artabsin, anabsinthin, matricin. Gate 2 — the bitter principle; absinthin detection threshold ~1:30,000.
+
+**Flavonoids** (0.3–1.0%): quercetin, kaempferol, rutin. Secondary validation.
+
+**Phenolic acids** (1.0–2.5%): chlorogenic acid, caffeic acid. Stability markers.
 
 The thujone ratio α:β ≈ 1.4:1 is the target ratio for the preparation — the plant's own ketone balance is what the preparer must reproduce.
 
@@ -304,13 +235,13 @@ The rotation is structural, not metaphorical. The steam physically rotates throu
 
 Gate 2 verifies the aqueous fraction at absinthin bitterness threshold 1:30,000. Below this threshold, the sesquiterpene lactone extraction is incomplete. Above, the preparation is over-extracted and may carry undesirable tannins.
 
-- **Pass.** Aqueous residue bitterness at 1:28,000. Gate 1 rotation was clean.
+**Pass.** Aqueous residue bitterness at 1:28,000. Gate 1 rotation was clean.
 
 **Gate 3 — Winding Verification: The Single Spiral**
 
 Wormwood's $\Omega = 1$ specifies a single extraction pass. Verified by closure: oil yield from a single pass (0.8–1.2%) falls within the expected range for Artemisia species. Second-pass control: additional 0.15% yield, but chlorophyll contamination detected by UV fluorescence. The plant's morphology was correct.
 
-- **Pass.** Single pass yield: 1.05%. $\Omega = 1$ confirmed.
+**Pass.** Single pass yield: 1.05%. $\Omega = 1$ confirmed.
 
 #### 15.4 The Recipe Is the Plant
 
@@ -329,20 +260,15 @@ In the pharmacy catalog, wormwood-class entries (extractio → tinctura, folium/
 **Entry:** *Mandragora officinarum* L. (Mandrake, Mandragora)
 **Family:** Solanaceae
 **Habitat:** Mediterranean basin; calcareous, well-drained soils.
-**Macroscopic morphology:**
-- **Root:** Fusiform, often bifurcated, 30–60 cm long. The bifurcation point is the opcode marker.
-- **Leaves:** Ovate-oblong, 15–45 cm, dark green, rugose, in a basal rosette.
-- **Flowers:** Bell-shaped, purple to greenish-white, 2–3 cm, on short pedicels.
-- **Fruit:** Berry, globose, 2–3 cm, yellow to orange when ripe, aromatic. The fruit is the only non-toxic part of the plant — a structural anomaly that parallels the FFUSE recombination.
-- **Phyllotaxy:** Rosette (no spiral), $\Omega = 0$ before the fork, then binary ($\mathbb{Z}_2$) after.
+**Macroscopic morphology:** The root is fusiform, often bifurcated, 30–60 cm long — the bifurcation point is the opcode marker. Leaves are ovate-oblong, 15–45 cm, dark green, rugose, in a basal rosette. Flowers are bell-shaped, purple to greenish-white, 2–3 cm, on short pedicels. The fruit is a berry, globose, 2–3 cm, yellow to orange when ripe, aromatic — the only non-toxic part of the plant, a structural anomaly that parallels the FFUSE recombination. Phyllotaxy is rosette (no spiral): $\Omega = 0$ before the fork, then binary ($\mathbb{Z}_2$) after.
 
 #### 16.2 Chemical Constituents
 
-| Compound Class | Key Compounds | Concentration | Gate Role |
-|:---------------|:--------------|:-------------|:----------|
-| **Tropane alkaloids** | Hyoscyamine (70%), scopolamine (20%), atropine (10%) | 0.3–0.8% of dried root | Gate 1 — the bifurcation target |
-| **Withanolides** | Withaferin A, withanolide D | 0.05–0.1% | Gate 2 — steroidal lactones; presence verifies extraction completeness |
-| **Calystegines** | Polyhydroxylated nortropanes | Trace | Glycosidase inhibitors; co-extracted in one arm |
+**Tropane alkaloids** (0.3–0.8% of dried root): hyoscyamine (70%), scopolamine (20%), atropine (10%). Gate 1 — the bifurcation target.
+
+**Withanolides** (0.05–0.1%): withaferin A, withanolide D. Gate 2 — steroidal lactones; presence verifies extraction completeness.
+
+**Calystegines** (trace): polyhydroxylated nortropanes. Glycosidase inhibitors; co-extracted in one arm.
 
 The hyoscyamine:scopolamine ratio of ~3.5:1 is species-typical for *M. officinarum* and is a species-level identity marker embedded in the fork.
 
@@ -352,8 +278,7 @@ The hyoscyamine:scopolamine ratio of ~3.5:1 is species-typical for *M. officinar
 
 The FSPLIT operation bifurcates the dried root into two preparation streams:
 
-- **T-arm (therapeutic):** Cold ethanol (70%) maceration, 14 days. Full tropane spectrum — hyoscyamine, scopolamine, atropine. Topical anesthetic.
-- **F-arm (ceremonial):** Hot water decoction with acetic acid (5%), 2 hours. Heat and acid selectively hydrolyze hyoscyamine to atropine (racemization) and partially degrade scopolamine. Pharmacologically distinct preparation.
+The T-arm (therapeutic) receives cold ethanol (70%) maceration for 14 days, yielding the full tropane spectrum — hyoscyamine, scopolamine, atropine — as a topical anesthetic. The F-arm (ceremonial) undergoes hot water decoction with acetic acid (5%) for 2 hours; heat and acid selectively hydrolyze hyoscyamine to atropine (racemization) while partially degrading scopolamine, producing a pharmacologically distinct preparation.
 
 The fork produces two different medicines from the same root. The plant's bifurcated morphology encodes the instruction.
 
@@ -361,15 +286,13 @@ The fork produces two different medicines from the same root. The plant's bifurc
 
 Gate 2 uses the withanolide fraction as a verification marker. Their presence in both arms at detectable levels confirms extraction completeness. Below 0.01% in either arm: extraction is incomplete.
 
-- **Pass T-arm:** Withaferin A at 0.04%. Hyoscyamine: 0.52%.
-- **Pass F-arm:** Withaferin A at 0.03%. Atropine: 0.38% (confirming racemization).
+T-arm: withaferin A at 0.04%, hyoscyamine at 0.52% — pass. F-arm: withaferin A at 0.03%, atropine at 0.38% (confirming racemization) — pass.
 
 **Gate 3 — Winding Verification: The FFUSE Recombination**
 
 Mandrake's $\Omega = \mathbb{Z}_2$ means the two arms can be recombined — FFUSE(FSPLIT(root)) returns the original pharmacological profile.
 
-- **FFUSE test:** Combine equal volumes of T-arm and F-arm. The mixture contains both hyoscyamine and atropine at approximately half their original concentrations, plus scopolamine from both arms — pharmacologically equivalent to an unfractionated total alkaloid extract. The fork was reversible.
-- **Pass.** $\Omega = \mathbb{Z}_2$ confirmed.
+**FFUSE test:** Combine equal volumes of T-arm and F-arm. The mixture contains both hyoscyamine and atropine at approximately half their original concentrations, plus scopolamine from both arms — pharmacologically equivalent to an unfractionated total alkaloid extract. The fork was reversible. **Pass.** $\Omega = \mathbb{Z}_2$ confirmed.
 
 In the pharmacy catalog, mandrake-class entries (trituratio + extractio → mixtura, radix, media potency, FSPLIT structure) appear in the n_ops range 10–12. The f39r/p3 summa entry (trituratio + extractio, radix, n_ops=12) is structurally the closest catalog match to the full mandrake protocol.
 
@@ -388,22 +311,19 @@ The harvest ritual — dog, rope, stopped ears — is a degraded transmission of
 **Entry:** *Ricinus communis* L. (Castor Bean)
 **Family:** Euphorbiaceae
 **Habitat:** Tropical and subtropical, widely naturalized; native to East Africa and India.
-**Macroscopic morphology:**
-- **Leaves:** Palmately 7–9 lobed, each lobe with serrate-dentate margins. Large (15–45 cm), glossy. The 7–9 lobes radiate from a central point — structurally distinct from wormwood's bilateral dissection and mandrake's simple ovate form.
-- **Phyllotaxy:** Alternate spiral, divergence angle ≈137.5°. Fibonacci $(2,5)$ pair: 2 complete windings per 5 leaves. $\Omega = 2$.
-- **Flowers:** Monoecious — separate male and female flowers on the same plant. The spatial separation of staminate and pistillate flowers is the XOR gate at the reproductive level.
-- **Seed:** Oval, 8–18 mm, highly polished, mottled in brown, black, white, and russet. Each seed's pattern is unique — a natural nonce. The seed contains 40–60% oil (triglycerides, predominantly ricinoleic acid) and 1–5% ricin (type 2 RIP, A-chain + B-chain linked by a disulfide bond).
+**Macroscopic morphology:** Leaves are palmately 7–9 lobed with serrate-dentate margins, large (15–45 cm), glossy, with lobes radiating from a central point — structurally distinct from wormwood's bilateral dissection and mandrake's simple ovate form. Phyllotaxy is alternate spiral at approximately 137.5°; the Fibonacci $(2,5)$ pair gives 2 complete windings per 5 leaves: $\Omega = 2$. Flowers are monoecious, with separate male and female flowers on the same plant — the spatial separation of staminate and pistillate flowers is the XOR gate at the reproductive level. Seeds are oval, 8–18 mm, highly polished, mottled in brown, black, white, and russet, each with a unique surface pattern serving as a natural nonce; each seed contains 40–60% oil (triglycerides, predominantly ricinoleic acid) and 1–5% ricin (type 2 RIP, A-chain + B-chain linked by a disulfide bond).
 
 The mottling matters. No two castor beans have the same pattern. The seed's surface is a one-time identifier — a physical nonce that marks each seed as a unique instantiation of the structural type. It is the morphological trace of the XOR: each seed is a distinct choice-point.
 
 #### 17.2 Chemical Constituents
 
-| Compound Class | Key Compounds | Concentration | Gate Role |
-|:---------------|:--------------|:-------------|:----------|
-| **Triglyceride oil** | Ricinoleic acid (85–90%), oleic, linoleic | 40–60% of seed mass | T-arm — cold-pressed medicine |
-| **Ricin** (RIP-II) | A-chain (N-glycosidase), B-chain (lectin) | 1–5% of seed mass | F-arm — the toxin; must be XOR'd out |
-| **RCA** | RCA-I (tetramer), RCA-II | 0.5–1% | Lectin that complicates the XOR gate |
-| **Ricinine** | Pyridone alkaloid | ~0.1% | Species-specific identity marker |
+**Triglyceride oil** (40–60% of seed mass): ricinoleic acid (85–90%), oleic, linoleic. T-arm — cold-pressed medicine.
+
+**Ricin** RIP-II (1–5% of seed mass): A-chain (N-glycosidase), B-chain (lectin). F-arm — the toxin; must be XOR'd out.
+
+**RCA** (0.5–1%): RCA-I (tetramer), RCA-II. Lectin that complicates the XOR gate.
+
+**Ricinine** (~0.1%): pyridone alkaloid. Species-specific identity marker.
 
 #### 17.3 The Three Gates
 
@@ -411,28 +331,25 @@ The mottling matters. No two castor beans have the same pattern. The seed's surf
 
 The castor bean's Gate 1 is an exclusive choice: the preparation must separate ricin and castor oil into mutually exclusive streams. No recombination.
 
-- **T-arm** (therapeutic): Cold-pressing protocol. Seed crushed and pressed without heat (< 40°C). Oil flows into product stream; ricin remains in the press cake (water-soluble protein, oil-insoluble).
-- **F-arm** (degenerate path, not taken): Heat extraction. Ricin dissolves into the oil. Both products contaminate each other. This is the path the XOR forbids.
-- **Recombination:** Skipped. Permanently.
+The T-arm (therapeutic) uses cold-pressing: seed crushed and pressed without heat (< 40°C), oil flowing into the product stream while ricin remains in the press cake (water-soluble protein, oil-insoluble). The F-arm (degenerate path, not taken) is heat extraction, in which ricin dissolves into the oil and both products contaminate each other — the path the XOR forbids.
+**Recombination:** Skipped. Permanently.
 
 **Gate 2 — Reactivity Verification: The Ricin Lattice**
 
-| State | Plant Condition | Processing | Gate 2 result |
-|:------|:----------------|:-----------|:--------------|
-| Medicine (True) | Castor oil — pure medicine | Cold-pressed, ricin = 0, oil intact | Pass |
-| Toxin (False) | Ricin — pure toxin | Isolated A+B chain, active RIP | Pass (XOR arm) |
-| Both | Contaminated oil | Heat-extracted, both present | **Fail** |
-| Neither | Denatured seed | Excessive heat, both inactivated | **Fail** |
+**Medicine** (T): castor oil, pure — cold-pressed, ricin = 0, oil intact → Pass  
+**Toxin** (F): ricin, pure — isolated A+B chain, active RIP → Pass (XOR arm)  
+**Both**: contaminated oil — heat-extracted, both present → **Fail**  
+**Neither**: denatured seed — excessive heat, both inactivated → **Fail**
 
 Ricin's extraordinary toxicity means the safety threshold is effectively zero. Any detectable ricin in the oil stream constitutes a Gate 2 failure. The XOR must be perfect.
 
-- **Pass.** Cold-pressed — ricin ≤ detection limit, ricinoleic acid > 85% purity.
+**Pass.** Cold-pressed — ricin ≤ detection limit, ricinoleic acid > 85% purity.
 
 **Gate 3 — Winding Verification: The Double Spiral**
 
 The castor bean's $\Omega = 2$ (Fibonacci $(2,5)$ pair) specifies two extraction passes. Single-pass cold pressing leaves ~5–8% residual oil in the cake; double-pass reduces this to < 2%. The integer winding count must be exactly 2.
 
-- **Pass.** $\Omega = 2$ confirmed.
+**Pass.** $\Omega = 2$ confirmed.
 
 In the pharmacy catalog, castor bean-class entries (compositum or trituratio + extractio → mixtura or tinctura, semen/fructus, $\Omega = 2$) cluster in the n_ops range 9–11. The XOR structure does not appear in the summa tier — the irreversibility of the XOR prevents the FFUSE recombination that characterizes summa potency.
 
@@ -440,9 +357,7 @@ In the pharmacy catalog, castor bean-class entries (compositum or trituratio + e
 
 A sequential plant says: do A, then B, then C. A disjunctive plant says: do A OR B, but never both. The castor bean gives choices, and the choices are existential:
 
-1. **Cold-press OR heat-extract.** One yields medicine; the other yields poison.
-2. **Oil OR cake.** You can have one. You cannot have both.
-3. **Medicine OR toxin.** The XOR is irrevocable.
+Cold-press or heat-extract: one yields medicine; the other yields poison. Oil or cake: you can have one, not both. Medicine or toxin: the XOR is irrevocable.
 
 The oracle does not tell you what to do. It presents a disjunction and forces a choice.
 
@@ -452,17 +367,11 @@ The oracle does not tell you what to do. It presents a disjunction and forces a 
 
 Three plants. Three structural configurations. One shared ground.
 
-| Property | *Artemisia absinthium* | *Mandragora officinarum* | *Ricinus communis* |
-|:---------|:----------------------|:------------------------|:-------------------|
-| **Morphological key** | Bilateral serration | Root bifurcation | Mottled seed + explosive dehiscence |
-| **Gate 1 opcode** | ROTR (rotation) | FSPLIT (fork) | XOR (exclusive disjunction) |
-| **Gate 2 trigger** | Absinthin bitterness | Withanolide bitterness | Ricin heat liability |
-| **Gate 3 winding** | Fibonacci $\Omega=1$ | Binary $\mathbb{Z}_2$ | Fibonacci $\Omega=2$ |
-| **Composition** | Sequential | Sequential (fork/recombine) | Disjunctive |
-| **Pharmaceutical output** | Essential oil + bitter tonic | Tropane anesthetic (two streams) | Castor oil (medicine only, ricin excluded) |
-| **Catalog tier analog** | mitis/generalis | media/summa-adjacent | media/XOR-blocked from summa |
-| **$d$(astro)** | **0.0000** | 0.8367 | 1.0 |
-| **Character** | Recipe | Ritual | Oracle |
+***Artemisia absinthium*** enters through bilateral serration (Gate 1: ROTR rotation), verifies against absinthin bitterness (Gate 2), and confirms a single Fibonacci winding (Gate 3: $\Omega=1$). Sequential preparation yields essential oil and bitter tonic at mitis/generalis potency; $d(\text{astro}) = 0.0000$. It is a **Recipe**.
+
+***Mandragora officinarum*** enters through root bifurcation (Gate 1: FSPLIT), verifies against withanolide bitterness (Gate 2), and closes a binary $\mathbb{Z}_2$ winding (Gate 3). Sequential preparation with fork and recombination yields a two-stream tropane anesthetic at media/summa-adjacent potency; $d(\text{astro}) = 0.8367$. It is a **Ritual**.
+
+***Ricinus communis*** enters through mottled seed and explosive dehiscence (Gate 1: XOR exclusive disjunction), verifies against ricin heat liability (Gate 2), and counts a double Fibonacci winding (Gate 3: $\Omega=2$). Disjunctive preparation yields castor oil only (ricin excluded) at media/XOR-blocked potency; $d(\text{astro}) = 1.0$. It is an **Oracle**.
 
 All three pass all three gates. All three are self-encoding. All three are structurally distinct configurations of the same twelve primitives — a demonstration that phytoglyphic encoding is not a property of wormwood alone but a general structural framework for plants whose morphology IS their pharmaceutical instruction.
 

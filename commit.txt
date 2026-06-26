@@ -1,3 +1,32 @@
+VOYNICH_LIFTED.md: all list formatting → pure prose — 2026-06-25
+
+manuscripts/VOYNICH_LIFTED.md (490L → 428L):
+  - All bullet lists and numbered lists converted to flowing prose paragraphs
+  - Statistical distributions: inline comma-separated with percentages
+  - Morphological descriptions: prose sentences, em-dashes as connectives
+  - Gate verification results: inline pass notation, no dash-leaders
+  - Prologue four-readings: numbered list → bold-header paragraphs
+  - Em-dash inline chains (folio densities, recipe corpus): prose sentences
+  - Three-plant summary (·-separated): three prose paragraphs
+  - PDF recompiled: 140K; copied to pdfs/
+
+---
+
+VOYNICH_LIFTED.md: table format → mathematics style; Shavian tuple notation — 2026-06-25
+
+manuscripts/VOYNICH_LIFTED.md (519L → 490L):
+  - All 17 markdown pipe-tables removed; replaced with mathematics-style formatting:
+      count/distribution tables → italic-label bullet lists with em-dash separators
+      seven summa entries → bold folio + arrow-chained field format
+      pharmacy↔recipe mapping → arrow-chained step sequences
+      morphological features → bold-term definition paragraphs
+      compound chemistry tables (3×) → bold compound class paragraphs with gate roles
+      Belnap ricin table → T/F/Both/Neither line format
+      three-plant summary table → per-plant one-line format with · separators
+  - Shavian tuple convention noted: ⟨𐑛𐑡𐑾𐑿𐑞𐑤𐑚𐑠⊙𐑒𐑙𐑷⟩ not dot-separated (going forward)
+
+---
+
 Embed VMS folio images; botanical ingredient assignment for all Accipe steps
 
 Modified: manuscripts/VOYNICH_ANNOTATED_FOLIOS.html (5.2 MB → fully self-contained)
