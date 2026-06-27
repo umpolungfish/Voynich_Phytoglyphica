@@ -205,7 +205,7 @@ def run_assessment(catalog_path: Optional[Path] = None) -> int:
             print(f'  Latin  : {latin}')
         if family:
             print(f'  Family : {family}')
-        print(f'  Tuple  : ⟨{"⋅".join(tuple_vals)}⟩')
+        print(f'  Tuple  : ⟨{"".join(tuple_vals)}⟩')
         print()
         print('  Primitive breakdown:')
         for prim in PRIMITIVE_ORDER:

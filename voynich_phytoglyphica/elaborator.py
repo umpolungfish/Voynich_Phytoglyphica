@@ -398,7 +398,7 @@ def format_protocol_header(plant_name: str, tuple_values: list[str],
     lines.append('═' * width)
     lines.append(f'  ELABORATED PROTOCOL  {plant_name}')
     lines.append('─' * width)
-    lines.append(f'  Tuple       ⟨{"⋅".join(tuple_values)}⟩')
+    lines.append(f'  Tuple       ⟨{"".join(tuple_values)}⟩')
     lines.append('─' * width)
 
     rows = [
