@@ -469,6 +469,6 @@ The Imscribing Grammar is the parameter set. The Voynich Manuscript is the progr
 
 ---
 
-*Voynich Phytoglyphica Engine Specification — 2026-06-24.*
-*Source: voynich_phytoglyphica package; voynich_engine session engine;*
-*IG catalog (voynich_pharmacy.json, 1491 entries); LSI_ivtff_0d.txt transcription.*
+Voynich Phytoglyphica Engine Specification
+Source: voynich_phytoglyphica package; voynich_engine session engine
+IG catalog (voynich_pharmacy.json); LSI_ivtff_0d.txt transcription
