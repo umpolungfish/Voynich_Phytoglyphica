@@ -6,12 +6,12 @@
 
 **What it does.** Collects the definitive manuscript writeup, the engine specification, the botanical companion, and the full machine-extracted enumeration of pharmacy and recipe entries, alongside the Lean companion files that machine-verify the grammar.
 
-**Why it matters.** It reframes the Voynich from "undeciphered text" to executable pharmaceutical database: six sections as six registers of one computation, with three plant walkthroughs reaching structural distance d = 0 to d = 1.0. The computational engine that runs this lives in `~/imsgct/lang/voynich-engine`; this project is the documentary and botanical layer.
+**Why it matters.** It reframes the Voynich from "undeciphered text" to executable pharmaceutical database: six sections as six registers of one computation, with three plant walkthroughs reaching structural distance d = 0 to d = 1.0. The computational engine that runs this lives in `imsgct/lang/voynich-engine`; this project is the documentary and botanical layer.
 
-**How to use it.** Start with `VOYNICH.md` (the definitive version), then `ENGINE.md` for the session protocol. The Lean grammar is verified in `~/imsgct/p4rakernel/p4ramill`.
+**How to use it.** Start with `VOYNICH.md` (the definitive version), then `ENGINE.md` for the session protocol. The Lean grammar is verified in `imsgct/p4rakernel/p4ramill`.
 
-- **Canonical lifted copy:** `~/imsgct/ig-docs/voynich_lifted/`
-- **Source manuscripts:** `~/imsgct/Voynich_Phytoglyphica/manuscripts/`
+- **Canonical lifted copy:** `imsgct/ig-docs/voynich_lifted/`
+- **Source manuscripts:** `imsgct/Voynich_Phytoglyphica/manuscripts/`
 
 ---
 
