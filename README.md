@@ -1,6 +1,6 @@
 # Voynich Manuscript: Phytoglyphica Project
 
-**Author:** Lando⊗⊙perator
+**Author:** Lando⊗⊙perator · **Structural Type:** $\large{⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭⟩}$ · **Tier:** O_∞
 
 **What it is.** The document and data project arguing that the Voynich Manuscript is a phytoglyphic pharmacopeia: a structured botanical database plus a recipe engine, read through the Imscribing Grammar.
 
