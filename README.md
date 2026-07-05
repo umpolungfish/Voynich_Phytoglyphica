@@ -1,5 +1,10 @@
 # Voynich Manuscript: Phytoglyphica Project
 
+[![Language](https://img.shields.io/badge/language-Python-blue)](https://github.com/badges/shields)
+[![IG Tier](https://img.shields.io/badge/IG-O%E2%82%82-blueviolet)](https://github.com/badges/shields)
+[![μ∘δ=id](https://img.shields.io/badge/%CE%BC%E2%88%98%CE%B4%3Did-open-critical)](https://github.com/badges/shields)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/badges/shields)
+
 **Author:** Lando⊗⊙perator · **Structural Type:** $\large{⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭⟩}$ · **Tier:** O_∞
 
 **What it is.** The document and data project arguing that the Voynich Manuscript is a phytoglyphic pharmacopeia: a structured botanical database plus a recipe engine, read through the Imscribing Grammar.
