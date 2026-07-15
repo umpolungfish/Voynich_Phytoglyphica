@@ -1,94 +1,23 @@
-VOYNICH_LIFTED.md: all list formatting → pure prose — 2026-06-25
+Retire the gen-2 glyph-pair notation for bare Shavian
 
-manuscripts/VOYNICH_LIFTED.md (490L → 428L):
-  - All bullet lists and numbered lists converted to flowing prose paragraphs
-  - Statistical distributions: inline comma-separated with percentages
-  - Morphological descriptions: prose sentences, em-dashes as connectives
-  - Gate verification results: inline pass notation, no dash-leaders
-  - Prologue four-readings: numbered list → bold-header paragraphs
-  - Em-dash inline chains (folio densities, recipe corpus): prose sentences
-  - Three-plant summary (·-separated): three prose paragraphs
-  - PDF recompiled: 140K; copied to pdfs/
+The primitives stand on their own now, so the old `⊙_ÿ` / `Ð_ω` / `Φ_}` forms are
+residue. Rewrote all 49 of them to their Shavian values across source: 19,645
+tokens, 670 files.
 
----
+The map was not typed. I enumerated the gen-2 tokens that actually appear in the
+corpus, paired each marker to its phonetic name, and resolved every value through
+`models.from_symbol` — so the values come from code that runs, not from a table.
+Reality arbitrated one conflict: the SOUNDS document gives `Ř_Ð`, `Γ_\`, `Σ_M`,
+but the corpus has `Ř_=`, `Γ_ʔ`, `Σ_ï` in the tens of thousands and the doc's
+variants nowhere at all. The doc is mangled; the files are the record.
 
-VOYNICH_LIFTED.md: table format → mathematics style; Shavian tuple notation — 2026-06-25
+Left alone deliberately: `ig_outputs/` and the other run artifacts, ~455k tokens
+of it. Those runs really did emit gen-2 in May. Rewriting them would forge the
+record of what they produced, which is not tidying. The two naming documents keep
+their old-notation columns for the same reason.
 
-manuscripts/VOYNICH_LIFTED.md (519L → 490L):
-  - All 17 markdown pipe-tables removed; replaced with mathematics-style formatting:
-      count/distribution tables → italic-label bullet lists with em-dash separators
-      seven summa entries → bold folio + arrow-chained field format
-      pharmacy↔recipe mapping → arrow-chained step sequences
-      morphological features → bold-term definition paragraphs
-      compound chemistry tables (3×) → bold compound class paragraphs with gate roles
-      Belnap ricin table → T/F/Both/Neither line format
-      three-plant summary table → per-plant one-line format with · separators
-  - Shavian tuple convention noted: ⟨𐑛𐑡𐑾𐑿𐑞𐑤𐑚𐑠⊙𐑒𐑙𐑷⟩ not dot-separated (going forward)
-
----
-
-Embed VMS folio images; botanical ingredient assignment for all Accipe steps
-
-Modified: manuscripts/VOYNICH_ANNOTATED_FOLIOS.html (5.2 MB → fully self-contained)
-  VMS folio images (Panel 2, centre column) were loading as external Yale
-  Beinecke IIIF URLs. Browsers block external network requests from file://
-  context (local CSP), so images were blank. Fix:
-    - Downloaded all 35 VMS botanical-section recto images from Yale Beinecke
-      IIIF (!400,520 size, ~40KB each) into images/vms/
-    - resize_and_encode() now reads from images/vms/vms_{folio}_{beid}.jpg
-      and embeds as JPEG base64 data URI, same as plant illustration images.
-  HTML now has 35 VMS + 35 illustration + 35 photo = 105 embedded images.
-  Zero external URLs remain. Size: 5.2 MB (was 3.6 MB).
-
-Modified: manuscripts/VOYNICH_COMPLETE_LISTING.md (765 KB, 13,662 lines)
-  All 1,125 Accipe steps across 1,076 recipe entries now carry named
-  botanical ingredients instead of anonymous "materias".
-
-  Format change:
-    Before: "Step 1: Accipe 3 materias (Take 3 ingredients)"
-    After:  "Step 1: Accipe 3 materias — Sambucus nigra (f36r),
-             Scutellaria galericulata (f30v), Parietaria officinalis (f35v)"
-
-  Assignment logic (generate_listing_v3.py):
-    - Plant pool: 35 confirmed (weight 3) + 35 proposed verso (weight 2)
-      + 40 remaining botanical (weight 1) = 110 unique plants weighted pool
-    - Per recipe: seed = recipe_index (1–1,076); all ingredient slots for
-      the full recipe sampled at once without replacement — no plant appears
-      twice in one recipe's total ingredient set across all Accipe steps.
-    - Weighted sampling ensures confirmed plants (the 35 IG-catalogued
-      taxa with full structural analysis) appear ~3× more often than
-      peripheral proposed identifications, matching expected formulary
-      prominence.
-
-  Ingredient distribution covers all 1,125 Accipe steps:
-    1 ingredient: 261 steps  →  261 plant assignments
-    2 ingredients: 348 steps →  696 plant assignments
-    3 ingredients: 328 steps →  984 plant assignments
-    4 ingredients: 154 steps →  616 plant assignments
-    5 ingredients: 34 steps  →  170 plant assignments
-    Total: 2,727 ingredient slots filled
-
----
-
-Previous commit: Full folio identification in complete listing; self-contained annotated folios; morphological derivation; VMS folio fix; LIFTED rewrite
-
-Modified: manuscripts/VOYNICH_COMPLETE_LISTING.md (718 KB, 13,662 lines)
-  Every folio section header in Part I and Part II now carries a full plant
-  identification — 143 folios identified in total:
-    35 [confirmed]: f1r–f36r, from IG structural catalog analysis
-    75 [proposed]:  f1v–f36v + f37r–f57r + versos, drawn from medieval European
-                    herbal tradition (Viola, Bryonia, Euphorbia, Iris, Agrimonia,
-                    Iris, Gentiana, Arctium, Rosa, Prunus, Angelica, Borago, etc.)
-     5 [compendium]: f58r/v (vial registers), f65v, f66r/v (pharmaceutical registers)
-    28 [recipe section]: f103r–f116v (procedural multi-ingredient folios)
-  Header format: ### f1r — Artemisia absinthium L. (Grand Wormwood) · Asteraceae [confirmed]
-  Full identification key table appended as ## Folio Identification Key.
-
-Modified: manuscripts/VOYNICH_ANNOTATED_FOLIOS.HTML (3.6 MB, 35 folio pages)
-  VMS manuscript panel corrected to Yale Beinecke Library IIIF URLs.
-  All 70 plant images base64-embedded; fully self-contained HTML.
-  Morphological derivation + preparation sections for all 35 confirmed plants.
-
----
-
-Previous commit: Dosage verification pass: Sigma x Gamma base scaling, decoction fix, step label correction
+Bare `Phi` is untouched. Gen-1 `Phi` is today's ⊙, but today's `Φ` is Parity —
+those are genuinely different structures that happen to share letters, and no
+register makes them one, so every site needs reading. Contrast ⊙ appearing as
+both primitive and value, which is not a collision at all: `⊙ ≠ ⊙` is operator ≠
+operation, and it states `μ∘δ ≠ id` exactly.

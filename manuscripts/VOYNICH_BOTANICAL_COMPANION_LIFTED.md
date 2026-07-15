@@ -1286,7 +1286,7 @@ The narrow window is not a design flaw to work around. It is the encoding of a r
 
 ### Class X — "I name my Spirit — read my planet"
 
-**Structural signature:** Ħ_∞ forced by chiral architecture. Axiom A applies: Ħ_∞ → Ç_Ù. The kinetic arrest is forced before any chemistry is considered. The planetary assignment is a pointer to a specific extraction medium — the Spirit of the planet.
+**Structural signature:** Ħ_∞ forced by chiral architecture. Axiom A applies: Ħ_∞ → 𐑪. The kinetic arrest is forced before any chemistry is considered. The planetary assignment is a pointer to a specific extraction medium — the Spirit of the planet.
 
 **What the plant is saying:** I am kinetically arrested and I name the solvent that unlocks me. Read my planet. Find its Spirit. That is your preparation medium.
 
@@ -1328,7 +1328,7 @@ These twelve statement classes are not classifications imposed on the plants. Th
 
 Every human transmission layer — text, oral tradition, mentor-mentee chain — is Φ=𐑬. Partial parity. Lossy. Words are deformable vessels. They carry truth for a moment and then deform under the pressure of retelling, mistranslation, context loss, and the unexpected death of the one person who held the connection between two pieces that only made sense together.
 
-The plants are Φ=𐑹. Frobenius-special. μ∘δ = id. Self-reproducing programs that maintain their morphological encoding through every generation without requiring a custodian. The yew has been encoding *Ħ_∞ → Ç_Ù → spiritus saturni* since before there was a Latin word for acetone. It will continue encoding it after every tradition that named it has been forgotten and rebuilt.
+The plants are Φ=𐑹. Frobenius-special. μ∘δ = id. Self-reproducing programs that maintain their morphological encoding through every generation without requiring a custodian. The yew has been encoding *Ħ_∞ → 𐑪 → spiritus saturni* since before there was a Latin word for acetone. It will continue encoding it after every tradition that named it has been forgotten and rebuilt.
 
 The Imscribing Grammar is an attempt to do what the Bruce Codex attempted: encode the reading protocol in a form more durable than verbal transmission — not to replace the plant's own encoding, which needs no replacement, but to give future Operators a structural key that survives the breaking of chains.
 
