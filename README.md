@@ -33,8 +33,6 @@
 | `VOYNICH_COMPLETE_LISTING.md` | Full enumeration of pharmacy + recipe entries |
 | `VOYNICH_ANNOTATED_FOLIOS.html` | Annotated folio images |
 
-Earlier versions (inaugural run, state-machine framing, dissolved/analytic, single-folio) are preserved in-repo for reference.
-
 ## Supporting assets
 
 - **`images/`** SVG type cards, phyllotaxis, trichome kinetics, continental distribution, Urpflanze master key, plant pairs, structural diagrams, folio collections.
