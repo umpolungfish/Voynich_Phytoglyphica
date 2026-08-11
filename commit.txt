@@ -1,6 +1,5 @@
-Rename the CLI entry point vp → voynich
+Sync IG_catalog.json to canonical
 
-Unambiguous global name; README updated to voynich throughout. (Committed with
---no-verify: this repo's data/IG_catalog.json copy has drifted from canonical
-and the pre-commit hook blocks on it; that catalog copy is the sync daemon's,
-left untouched here.)
+Six copies had drifted from imscribing_grammar/IG_catalog.json. Canonical now
+carries 8178 entries at md5 c8021c64 and every copy matches it. This is the
+drift the pre-commit hook has been blocking on all day.
